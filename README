@@ -1,0 +1,8 @@
+##################### Forum ###########################
+# Features
+
+- User erstellen, Profil bearbeiten (mit Avatar), löschen
+- Threads erstellen, bearbeiten
+- Posts erstellen, antworten und zitieren
+- Verschiedene Rollen => Admins, Moderatoren und User
+- Verschiedene Kategorien für Threads
