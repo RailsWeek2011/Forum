@@ -1,4 +1,5 @@
 <%= form_for(@category) do |f| %>
+    <%= f.hidden_field :category_id %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -15,10 +16,7 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= collection_select :category, :category_id, Category.all, :id, :name, :include_blank => true %>
-  </div>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>

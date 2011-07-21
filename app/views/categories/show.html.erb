@@ -13,4 +13,12 @@
 
 <% end  %>
 
+<% @freds.each do |fred|  %>
+
+<p>
+  <%= link_to fred.headline, fred_path(fred) %>
+</p>
+
+<% end %>
+
 <%= link_to 'Back', upper_category %>

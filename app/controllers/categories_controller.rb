@@ -13,7 +13,9 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    #show all kind categories
     @categories = Category.where(:category_id => params[:id])
+    @freds = Fred.where(:category_id => params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +27,11 @@ class CategoriesController < ApplicationController
   # GET /categories/new.json
   def new
     @category = Category.new
+    unless params[:id] == "0"
+      @parent = Category.find(params[:id])
+      @category.category = @parent 
+    end
+    
 
     respond_to do |format|
       format.html # new.html.erb
