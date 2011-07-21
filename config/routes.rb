@@ -1,9 +1,11 @@
 Forum::Application.routes.draw do
-  resources :freds
+  resources :freds , :except => [:new]
 
   resources :categories, :except => [:new]
   
   match "categories/:id/new" => "categories#new", :as => :new_category, :via => :get
+
+  match "freds/:id/new" => "freds#new", :as => :new_fred, :via => :get
   
 
   # The priority is based upon order of creation:
