@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New Category', new_category_path %>
+<%if category_is_nil?%>
+    <%= link_to 'New Category', new_category_path (0) %>
+<%else%>
+    <%= link_to 'New Category', new_category_path (:id) %>
+<%end%>
 
 <% @categories.each do |category|  %>
 
