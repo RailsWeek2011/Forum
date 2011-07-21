@@ -1,0 +1,57 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$main_width: 960px;
+
+div#main {
+  background-color: green;
+  color : black;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  width: $main_width;
+  min-height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.categories {
+  // Add the categories class to your body tag
+  // Then, place scoped styles here.
+}
+
+div.category {
+  background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    margin: 10px;
+    position: relative;
+    width: $main_width - 20;
+    height: 80px;
+}
+
+div.name_category {
+  color: black;
+  float: left;
+  font-size: 25px;
+  height: 70%;
+  margin-left: 30px;
+  position: relative;
+  width: 40%;
+  margin-top: 10px;
+}
+
+div.edit_category {
+  float: right;
+  position: relative;
+  margin-right: 30px;
+
+}
+
+div.destroy_category {
+  float: right;
+  position: relative;
+  margin-right: 30px;
+
+}

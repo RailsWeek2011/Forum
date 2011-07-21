@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<% @categories.each do |category|  %>
+
+<p>
+  <%= link_to category.name, category_path(category) %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_category_path(category) %> |
+
+
+<% end  %>
+
+<%= link_to 'Back', upper_category %>
