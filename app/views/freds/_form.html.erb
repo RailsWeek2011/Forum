@@ -1,0 +1,25 @@
+<%= form_for(@fred) do |f| %>
+  <% if @fred.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fred.errors.count, "error") %> prohibited this fred from being saved:</h2>
+
+      <ul>
+      <% @fred.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :headline %><br />
+    <%= f.text_field :headline %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

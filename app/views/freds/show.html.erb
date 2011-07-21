@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Headline:</b>
+  <%= @fred.headline %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @fred.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_fred_path(@fred) %> |
+<%= link_to 'Back', freds_path %>
