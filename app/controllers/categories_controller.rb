@@ -40,11 +40,11 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    @category = Category.new(params[:category])
+    @category = Category.new(params[:category]) 
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to @category, notice: params}
         format.json { render json: @category, status: :created, location: @category }
       else
         format.html { render action: "new" }
