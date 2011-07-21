@@ -1,6 +1,6 @@
-<h1>Listing categories</h1>
-
-<div>
+<div class="new_buttons">
+<%=  link_to 'New Category', new_category_path(0), :class => 'btn' %>
+</div>
 
 
 <% @categories.each do |category| %>
@@ -10,8 +10,6 @@
     <div class = "destroy_category"><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></div>
   </div>
 <% end %>
-</div>
 
 <br />
 
-<%= link_to 'New Category', new_category_path(0) %>

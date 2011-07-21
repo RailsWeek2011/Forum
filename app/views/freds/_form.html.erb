@@ -1,4 +1,5 @@
 <%= form_for(@fred) do |f| %>
+  <%= f.hidden_field :category_id %>
   <% if @fred.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@fred.errors.count, "error") %> prohibited this fred from being saved:</h2>

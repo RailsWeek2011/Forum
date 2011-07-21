@@ -1,32 +1,34 @@
 <p id="notice"><%= notice %></p>
 
+<div class="new_buttons">
 
 <% if  category_is_nil? %>
-    <%= link_to 'New Category', new_category_path(0) %>
+    <%= link_to 'New Category', new_category_path(0), :class => 'btn' %>
+    <%= link_to 'New Fred', new_fred_path(0), :class => 'btn' %>
 <% else %>
-    <%= link_to 'New Category', new_category_path(params[:id]) %>
+    <%= link_to 'New Category', new_category_path(params[:id]), :class => 'btn' %>
+    <%= link_to 'New Fred', new_fred_path(params[:id]), :class => 'btn' %>
 <% end %>
+
+</div>
+
 
 <% @categories.each do |category|  %>
 
 
-
-<p>
-  <%= link_to category.name, category_path(category) %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_category_path(category) %> |
-
+<div class="category">
+    <div class="name_category"><%= link_to category.name, category_path(category) %></div>
+    <div class="edit_category"><%= link_to 'Edit', edit_category_path(category) %></div>
+    <div class = "destroy_category"><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></div>
+</div>
 
 <% end  %>
 
 <% @freds.each do |fred|  %>
 
-<p>
-  <%= link_to fred.headline, fred_path(fred) %>
-</p>
+<div class="fred">
+    <div class="name_fred"><%= link_to fred.headline, fred_path(fred) %></div>
+</div>
 
 <% end %>
 

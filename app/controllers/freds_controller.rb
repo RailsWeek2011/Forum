@@ -25,6 +25,8 @@ class FredsController < ApplicationController
   # GET /freds/new.json
   def new
     @fred = Fred.new
+    @parent = Category.find(params[:id])
+    @fred.category = @parent 
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +46,7 @@ class FredsController < ApplicationController
 
     respond_to do |format|
       if @fred.save
-        format.html { redirect_to @fred, notice: 'Fred was successfully created.' }
+        format.html { redirect_to @fred, notice: 'Thread was successfully created.' }
         format.json { render json: @fred, status: :created, location: @fred }
       else
         format.html { render action: "new" }
