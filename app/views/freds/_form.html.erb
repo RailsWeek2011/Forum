@@ -1,3 +1,4 @@
+<div class = "formular">
 <%= form_for(@fred) do |f| %>
   <%= f.hidden_field :category_id %>
   <% if @fred.errors.any? %>
@@ -13,7 +14,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :headline %><br />
+    <%= f.label :headline %>
     <%= f.text_field :headline %>
   </div>
 
@@ -21,3 +22,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>

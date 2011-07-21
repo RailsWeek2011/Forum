@@ -26,6 +26,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   # GET /categories/new.json
   def new
+    @form_headline = "New Category"
     @category = Category.new
     unless params[:id] == "0"
       @parent = Category.find(params[:id])
@@ -41,6 +42,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    @form_headline = "Edit Category"
     @category = Category.find(params[:id])
   end
 
@@ -63,6 +65,7 @@ class CategoriesController < ApplicationController
   # PUT /categories/1
   # PUT /categories/1.json
   def update
+    @form_headline = "Update Category"
     @category = Category.find(params[:id])
 
     respond_to do |format|
