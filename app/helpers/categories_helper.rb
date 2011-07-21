@@ -7,4 +7,8 @@ module CategoriesHelper
       category_path(category[:category_id])
     end
   end
+
+
 end
+
+

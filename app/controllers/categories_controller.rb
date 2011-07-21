@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   def show
     @categories = Category.where(:category_id => params[:id])
 
-    respond_to do |format|
+      respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @categories }
     end
