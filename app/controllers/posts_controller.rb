@@ -26,17 +26,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     
-    if params[:post_or_thread] == "thread"
-     thread_id = params[:id]
-    else
-      @parent = Post.find(params[:id])
-      until @parent[:post_id].nil?
-        @parent = @parent.post
-      end
-       thread_id = @parent[:fred_id]
-    end
-    
-    @post[:fred_id] = thread_id
+    initialize_post
 
     respond_to do |format|
       format.html # new.html.erb
@@ -95,5 +85,20 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :ok }
     end
+  end
+  
+  def initialize_post
+    if params[:post_or_thread] == "thread"
+      thread_id = params[:id]
+    else
+      @post[:post_id] = params[:id]
+      @parent = Post.find(params[:id])
+      until @parent[:post_id].nil?
+        @parent = @parent.post
+      end
+      thread_id = @parent[:fred_id]
+    end
+    
+    @post[:fred_id] = thread_id
   end
 end

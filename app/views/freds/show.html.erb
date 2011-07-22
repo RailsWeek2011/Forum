@@ -12,7 +12,7 @@
   </div>
   <div class="actual_post">
     <div class="posting_head">
-      <%= "Datum @Autor" %>
+      <%=  "#{@fred[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(@fred[:created_at])} ago) @Autor" %>
     </div>
     <div class="post_body">
       <%= @fred.content %>
@@ -31,7 +31,7 @@
   </div>
   <div class="actual_post">
     <div class="posting_head">
-      <%= "Datum @Autor" %>
+      <%= "#{post[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(post[:created_at])} ago) @Autor" %>
     </div>
     <div class="post_body">
       <%= post.content %>

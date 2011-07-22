@@ -13,38 +13,31 @@ div.initial_post{
   background-color: white;
   border: 1px solid black;
   border-radius: 5px 5px 5px 5px;
-  height: 150px;
+  min-height: 150px;
   margin-left: 15px;
   position: relative;
-  width: 930px;
+  overflow: hidden;
 }
 
 div.author_info{
   border-right: 1px solid red;
   float: left;
-  height: 100%;
   margin-left: 10px;
   position: relative;
-  width: 70px;
 }
 div.actual_post{
-  float: left;
-  height: 100%;
   position: relative;
-  width: 820px;
 }
 div.posting_head{
   border-bottom: 1px solid red;
-  float: left;
+  clear: both;
   padding-left: 10px;
   position: relative;
-  width: 100%;
 }
 div.post_body{
-  float: left;
+  clear: both;
   padding-left: 10px;
   position: relative;
-  width: 800px;
 }
 
 div.post_footer{
@@ -56,8 +49,7 @@ div.reply_post{
   background-color: white;
   border: 1px solid black;
   border-radius: 5px 5px 5px 5px;
-  height: 150px;
-  margin-left: 15px;
+  min-height: 150px;
+  margin-left: 25px;
   position: relative;
-  width: $post_width;
 }
