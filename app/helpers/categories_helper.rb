@@ -8,15 +8,6 @@ module CategoriesHelper
     end
   end
 
-  def category_is_nil?
-    if :category_id == nil
-      return true
-    else
-      return false
-    end
-
-  end
-
 end
 
 
