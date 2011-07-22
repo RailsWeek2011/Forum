@@ -1,7 +1,13 @@
 Forum::Application.routes.draw do
+  resources :posts
+
   resources :freds , :except => [:new]
 
   resources :categories, :except => [:new]
+
+  resource :posts, :except => [:new]
+
+  match "posts/:id/new" => "posts#new", :as => :new_post, :via => :get
   
   match "categories/:id/new" => "categories#new", :as => :new_category, :via => :get
 
