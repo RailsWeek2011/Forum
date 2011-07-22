@@ -1,4 +1,4 @@
-<h1>Listing freds</h1>
+<h1>Listing Threads</h1>
 
 <table>
   <tr>
@@ -12,7 +12,8 @@
 <% @freds.each do |fred| %>
   <tr>
     <td><%= fred.headline %></td>
-    <td><%= fred.category %></td>
+
+    <td><%= fred.content %> </td>
     <td><%= link_to 'Show', fred %></td>
     <td><%= link_to 'Edit', edit_fred_path(fred) %></td>
     <td><%= link_to 'Destroy', fred, confirm: 'Are you sure?', method: :delete %></td>

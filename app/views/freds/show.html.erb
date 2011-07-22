@@ -7,10 +7,11 @@
 </div>
 
 <p>
-  <b>Category:</b>
-  <%= @fred.category %>
+  <b>Content:</b>
+  <%= @fred.content %>
 </p>
 
+<%= link_to 'Reply to Thread', new_post_path(@fred.id) %>
 
 <%= link_to 'Edit', edit_fred_path(@fred) %> |
 <%= link_to 'Back', freds_path %>
