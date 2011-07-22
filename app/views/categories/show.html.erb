@@ -2,13 +2,9 @@
 
 <div class="new_buttons">
 
-<% if  category_is_nil? %>
-    <%= link_to 'New Category', new_category_path(0), :class => 'btn' %>
-    <%= link_to 'New Fred', new_fred_path(0), :class => 'btn' %>
-<% else %>
+
     <%= link_to 'New Category', new_category_path(params[:id]), :class => 'btn' %>
     <%= link_to 'New Fred', new_fred_path(params[:id]), :class => 'btn' %>
-<% end %>
 
 </div>
 
