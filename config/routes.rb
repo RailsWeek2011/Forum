@@ -7,7 +7,7 @@ Forum::Application.routes.draw do
 
   resource :posts, :except => [:new]
 
-  match "posts/:id/new" => "posts#new", :as => :new_post, :via => :get
+  match "posts/:id/:post_or_thread/:reply_or_quote/new" => "posts#new", :as => :new_post, :via => :get
   
   match "categories/:id/new" => "categories#new", :as => :new_category, :via => :get
 

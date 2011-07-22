@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$post_width: 930px;
+
 body.freds {
   // Add the freds class to your body tag
   // Then, place scoped styles here.
@@ -31,7 +33,7 @@ div.actual_post{
   position: relative;
   width: 820px;
 }
-div.initial_posting_head{
+div.posting_head{
   border-bottom: 1px solid red;
   float: left;
   padding-left: 10px;
@@ -48,4 +50,14 @@ div.post_body{
 div.post_footer{
   float: right;
   position: relative;
+}
+
+div.reply_post{
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px 5px 5px 5px;
+  height: 150px;
+  margin-left: 15px;
+  position: relative;
+  width: $post_width;
 }

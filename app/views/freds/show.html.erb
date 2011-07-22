@@ -11,18 +11,39 @@
     <%= "Autor" %>
   </div>
   <div class="actual_post">
-    <div class="initial_posting_head">
+    <div class="posting_head">
       <%= "Datum @Autor" %>
     </div>
     <div class="post_body">
       <%= @fred.content %>
     </div>
     <div class="post_footer">
-      <%= link_to "reply", new_post_path(0) %>
-      <%= link_to "quote", new_post_path(0) %>
+      <%= link_to "reply", new_post_path(@fred.id, "thread", "reply") %>
+      <%= link_to "quote", new_post_path(@fred.id, "thread", "quote") %>
     </div>
   </div>
 </div>
+
+<% @fred.posts.each do |post|  %>
+<div class="reply_post">
+  <div class="author_info">
+    <%= "Autor" %>
+  </div>
+  <div class="actual_post">
+    <div class="posting_head">
+      <%= "Datum @Autor" %>
+    </div>
+    <div class="post_body">
+      <%= post.content %>
+    </div>
+    <div class="post_footer">
+      <%= link_to "reply", new_post_path(post.id, "post", "reply") %>
+      <%= link_to "quote", new_post_path(post.id, "post", "quote") %>
+    </div>
+  </div>
+</div>
+
+<% end  %>
 
 
 <%= link_to 'Edit', edit_fred_path(@fred) %> |

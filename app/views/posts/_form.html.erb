@@ -1,4 +1,5 @@
 <%= form_for(@post) do |f| %>
+<%= f.hidden_field :fred_id %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -16,7 +17,7 @@
 
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :value => get_quote %>
   </div>
 
   <div class="actions">

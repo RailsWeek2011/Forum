@@ -25,6 +25,18 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    
+    if params[:post_or_thread] == "thread"
+     thread_id = params[:id]
+    else
+      @parent = Post.find(params[:id])
+      until @parent[:post_id].nil?
+        @parent = @parent.post
+      end
+       thread_id = @parent[:fred_id]
+    end
+    
+    @post[:fred_id] = thread_id
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,11 +52,13 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    
     @post = Post.new(params[:post])
+    @fred = Fred.find(@post[:fred_id])
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @fred, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -57,10 +71,12 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    
+    @fred = Fred.find(@post[:fred_id])
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @fred, notice: 'Post was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
