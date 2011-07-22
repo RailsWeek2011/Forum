@@ -6,3 +6,46 @@ body.freds {
   // Add the freds class to your body tag
   // Then, place scoped styles here.
 }
+
+div.initial_post{
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px 5px 5px 5px;
+  height: 150px;
+  margin-left: 15px;
+  position: relative;
+  width: 930px;
+}
+
+div.author_info{
+  border-right: 1px solid red;
+  float: left;
+  height: 100%;
+  margin-left: 10px;
+  position: relative;
+  width: 70px;
+}
+div.actual_post{
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 820px;
+}
+div.initial_posting_head{
+  border-bottom: 1px solid red;
+  float: left;
+  padding-left: 10px;
+  position: relative;
+  width: 100%;
+}
+div.post_body{
+  float: left;
+  padding-left: 10px;
+  position: relative;
+  width: 800px;
+}
+
+div.post_footer{
+  float: right;
+  position: relative;
+}

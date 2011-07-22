@@ -6,10 +6,23 @@
   <%= @fred.headline %>
 </div>
 
-<p>
-  <b>Category:</b>
-  <%= @fred.category %>
-</p>
+<div class="initial_post">
+  <div class="author_info">
+    <%= "Autor" %>
+  </div>
+  <div class="actual_post">
+    <div class="initial_posting_head">
+      <%= "Datum @Autor" %>
+    </div>
+    <div class="post_body">
+      <%= @fred.content %>
+    </div>
+    <div class="post_footer">
+      <%= link_to "reply", new_post_path(0) %>
+      <%= link_to "quote", new_post_path(0) %>
+    </div>
+  </div>
+</div>
 
 
 <%= link_to 'Edit', edit_fred_path(@fred) %> |
