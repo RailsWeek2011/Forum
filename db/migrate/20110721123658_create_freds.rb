@@ -2,6 +2,7 @@ class CreateFreds < ActiveRecord::Migration
   def change
     create_table :freds do |t|
       t.string :headline
+      t.string :content
       t.references :category
 
       t.timestamps

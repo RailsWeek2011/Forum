@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20110722074858) do
 
   create_table "freds", :force => true do |t|
     t.string   "headline"
+    t.string   "content"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
