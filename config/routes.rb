@@ -1,4 +1,6 @@
 Forum::Application.routes.draw do
+  devise_for :users
+
   root :to => "categories#index"
 
   resources :posts
