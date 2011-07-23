@@ -1,4 +1,6 @@
 Forum::Application.routes.draw do
+  root :to => "categories#index"
+
   resources :posts
 
   resources :freds , :except => [:new]
