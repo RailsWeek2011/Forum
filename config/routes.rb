@@ -1,4 +1,6 @@
 Forum::Application.routes.draw do
+  resources :profiles , :except => [:new]
+
   devise_for :users
 
   root :to => "categories#index"
@@ -16,6 +18,8 @@ Forum::Application.routes.draw do
   match "categories/:id/new" => "categories#new", :as => :new_category, :via => :get
 
   match "freds/:id/new" => "freds#new", :as => :new_fred, :via => :get
+
+  match "profiles/:id/new"  => "profiles#new", :as=> :new_profile, :via => :get
   
 
   # The priority is based upon order of creation:

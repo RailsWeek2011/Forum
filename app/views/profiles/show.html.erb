@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+<p>
+  <b>Nick:</b>
+  <%= @profile.nick %>
+</p>
+
+<p>
+  <b>Avatar:</b>
+  <%= @profile.avatar %>
+</p>
+
+<p>
+  <b>Signature:</b>
+  <%= @profile.signature %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @profile.user.email %>
+</p>
+
+<% if @profile.user.email == current_user.email %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %>
+<% end %>|
+<%= link_to 'Back', categories_path %>
+
+<%else%>
+
+    No logon, no show Profile <%= link_to 'Back', categories_path %>
+
+<% end %>
