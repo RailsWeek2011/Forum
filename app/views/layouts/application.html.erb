@@ -12,9 +12,11 @@
 
   <div id ="Logon Frame">
     <% unless user_signed_in? %>
-    Hello gayass you are not logged in !<%= link_to "Login", new_user_session_path %>
+        Hello, you are not logged in!
+        <%= link_to "Login", new_user_session_path %>
     <% else %>
-    Welcome !  <%= link_to "Logout", destroy_user_session_path, :method => :delete%>
+        Signed in as <%= current_user.email %>. Not you?
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete%>
     <%end%>
   </div>
 
