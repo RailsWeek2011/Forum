@@ -4,6 +4,8 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  last_post: "letzter beitrag"
+  from: "von"
   showuser: "zeigen"
   showusers: "Benutzerliste"
   password: "Passwort"

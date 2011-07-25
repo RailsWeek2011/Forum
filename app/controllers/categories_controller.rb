@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
   def show
     #show all kind categories
     @categories = Category.where(:category_id => params[:id])
-    @freds = Fred.where(:category_id => params[:id])
+    @freds = Fred.where(:category_id => params[:id]).order("updated_at DESC")
 
       respond_to do |format|
       format.html # show.html.erb

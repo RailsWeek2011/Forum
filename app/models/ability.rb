@@ -20,6 +20,7 @@ class Ability
     if user.role? :user
       can :read, :all
       can :create, Post
+      can :create, Fred
     end
 
 

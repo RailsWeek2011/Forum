@@ -24,6 +24,9 @@
 
 <div class="fred">
     <div class="name_fred"><%= link_to fred.headline, fred_path(fred) %></div>
+    <div class="statistics_of_fred">
+    <%= raw "#{t(:last_post)}  (#{time_ago_in_words((last_post(fred)).created_at)}) #{t(:from)} #{(last_post(fred)).user[:nick]}" %>
+    </div>
 </div>
 
 <% end %>

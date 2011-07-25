@@ -15,8 +15,9 @@ module PostsHelper
       if (content =~ pattern).nil?
         content = "bq.. " + content
         pattern = /^p\./
-        unless (content =~ pattern).nil?
-          content[content=~pattern] = "bg."
+        result = content =~ pattern
+        unless result.nil?
+          content[result..(result+1)] = "bg.."
         end
         content = content + "p. "
       end

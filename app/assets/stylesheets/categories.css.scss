@@ -71,23 +71,22 @@ a.btn {
 
 div.fred {
   background-color: gray;
-    border-radius: 5px 5px 5px 5px;
-    float: right;
-    margin: 10px;
-    position: relative;
-    width: $main_width - 220;
-    height: 80px;
+  border-radius: 5px 5px 5px 5px;
+  float: right;
+  margin: 10px;
+  position: relative;
+  width: $main_width - 220;
+  height: 80px;
 }
 
 div.name_fred {
+  clear: both;
   color: black;
-  float: left;
   font-size: 25px;
-  height: 70%;
+  margin-bottom: 10px;
   margin-left: 30px;
-  position: relative;
-  width: 40%;
   margin-top: 10px;
+  position: relative;
 }
 
 div.formular {
@@ -105,4 +104,8 @@ div.formular {
 h1.form_headline {
   margin-left: 350px;
   padding-top: 30px;
+}
+
+div.statistics_of_fred {
+  margin-left: 10px;
 }
