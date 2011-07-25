@@ -10,20 +10,16 @@
 
 <div id="main">
 
+
   <div id ="Logon Frame">
     <% unless user_signed_in? %>
         Hello, you are not logged in!
         <%= link_to "Login", new_user_session_path %>
 
     <% else %>
-        Signed in as <%= current_user.email %>. Not you?
+        Signed in as <%= current_user.nick %>. Not you?
+        <%= link_to "Edit my Profile", edit_user_registration_path %>
         <%= link_to "Logout", destroy_user_session_path, :method => :delete%>
-
-        <%  if (p =(Profile.find_by_user_id (current_user.id)) != nil) %>
-            <%= link_to "Edit my Profile", edit_profile_path(p.id) %>
-        <% else %>
-            <%= link_to "Create Profile",  new_profile_path(current_user) %>
-        <% end %>
     <%end%>
   </div>
 
