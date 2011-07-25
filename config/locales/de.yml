@@ -4,7 +4,8 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
-
+  showuser: "zeigen"
+  showusers: "Benutzerliste"
   password: "Passwort"
   logout: "Ausloggen"
   editprofile: "Profil bearbeiten"

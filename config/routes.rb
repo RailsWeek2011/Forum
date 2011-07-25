@@ -16,6 +16,11 @@ Forum::Application.routes.draw do
     resources :categories, :except => [:new]
     resource :posts, :except => [:new]
   end
+  match "users/:id" => "users#destroy", :as => :destroy_user, :via => :delete
+
+  match "users/:id" =>"users#show", :as => :show_user, :via => :get
+
+  match "users/" => "users#index", :via => :get, :as => :show_users
 
   match "posts/:id/:post_or_thread/:reply_or_quote/new" => "posts#new", :as => :new_post, :via => :get
   

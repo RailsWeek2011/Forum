@@ -1,0 +1,14 @@
+<p><%= @user.email %></p>
+<p><%= @user.nick %></p>
+<p><%= @user.signature %></p>
+<p><%= @user.created_at %></p>
+<p><%= @user.roles_mask %></p>
+
+<% if can? :manage, @users %>
+    <% #mein Vorschlag für destroy %>
+    <%= link_to 'Destroy', destroy_user_path(@user), :method => :delete %>
+
+<% end %>
+
+<%= link_to t(:back), show_users_path %>
+

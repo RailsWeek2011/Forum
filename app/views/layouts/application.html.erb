@@ -22,6 +22,7 @@
         <%= t(:hello1) %> <%= current_user.nick %>. <%= t(:notyou) %>
         <%= link_to t(:editprofile), edit_user_registration_path %>
         <%= link_to t(:logout), destroy_user_session_path, :method => :delete%>
+        <%= link_to t(:showusers), show_users_path %>
     <%end%>
   </div>
 

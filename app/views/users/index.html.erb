@@ -1,0 +1,23 @@
+<h1> All Users </h1>
+<table id="users" >
+    <thead>
+        <tr>
+          <th>Email</th>
+          <th>Nick</th>
+          <th>Signature</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user|%>
+        <tr>
+            <th><%=user.email%></th>
+            <th><%=user.nick%></th>
+            <th><%=user.signature%></th>
+            <th><%= link_to t(:showuser), show_user_path(user)%></th>
+        </tr>
+        <%end %>
+    </tbody>
+
+</table>
+
+<%= link_to t(:back), root_path %>
