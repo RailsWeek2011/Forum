@@ -1,11 +1,13 @@
 Forum::Application.routes.draw do
-  resources :posts
 
-  resources :freds , :except => [:new]
-
-  resources :categories, :except => [:new]
-
-  resource :posts, :except => [:new]
+  
+  
+  scope "(:locale)", :locale => /en|de/ do
+    resources :posts
+    resources :freds , :except => [:new]
+    resources :categories, :except => [:new]
+    resource :posts, :except => [:new]
+  end
 
   match "posts/:id/:post_or_thread/:reply_or_quote/new" => "posts#new", :as => :new_post, :via => :get
   

@@ -9,15 +9,15 @@
   </div>
   <div class="actual_post">
     <div class="posting_head">
-      <%= "#{reply[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(reply[:created_at])} ago) " %>
+      <%= "#{reply[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(reply[:created_at])}) " %>
       <%= link_to("@Autor", fred_path(reply[:fred_id])+ "#" + reply[:post_id].to_s) %>
     </div>
     <div class="post_body">
       <%= raw (red_cloth reply.content) %>
     </div>
     <div class="post_footer">
-      <%= link_to "reply", new_post_path(reply.id, "post", "reply") %>
-      <%= link_to "quote", new_post_path(reply.id, "post", "quote") %>
+      <%= link_to t(:reply), new_post_path(reply.id, "post", "reply") %>
+      <%= link_to t(:quote), new_post_path(reply.id, "post", "quote") %>
     </div>
   </div>
 </div>

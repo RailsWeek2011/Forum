@@ -12,14 +12,14 @@
   </div>
   <div class="actual_post">
     <div class="posting_head">
-      <%=  "#{@fred[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(@fred[:created_at])} ago) @Autor" %>
+      <%=  "#{@fred[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(@fred[:created_at])}) @Autor" %>
     </div>
     <div class="post_body">
       <%= @fred.content %>
     </div>
     <div class="post_footer">
-      <%= link_to "reply", new_post_path(@fred.id, "thread", "reply") %>
-      <%= link_to "quote", new_post_path(@fred.id, "thread", "quote") %>
+      <%= link_to t(:reply), new_post_path(@fred.id, "thread", "reply") %>
+      <%= link_to t(:quote), new_post_path(@fred.id, "thread", "quote") %>
     </div>
   </div>
 </div>
@@ -32,14 +32,14 @@
   </div>
   <div class="actual_post">
     <div class="posting_head">
-      <%= "#{reply[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(reply[:created_at])} ago) @Autor" %>
+      <%= "#{reply[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(reply[:created_at])}) @Autor" %>
     </div>
     <div class="post_body">
       <%= raw (red_cloth reply.content) %>
     </div>
     <div class="post_footer">
-      <%= link_to "reply", new_post_path(reply.id, "post", "reply") %>
-      <%= link_to "quote", new_post_path(reply.id, "post", "quote") %>
+      <%= link_to t(:reply), new_post_path(reply.id, "post", "reply") %>
+      <%= link_to t(:quote), new_post_path(reply.id, "post", "quote") %>
     </div>
   </div>
 </div>
@@ -48,5 +48,5 @@
 <% end  %>
 
 
-<%= link_to 'Edit', edit_fred_path(@fred) %> |
-<%= link_to 'Back', category_path(@fred.category_id)%>
+<%= link_to t(:edit), edit_fred_path(@fred) %> |
+<%= link_to t(:back), category_path(@fred.category_id)%>

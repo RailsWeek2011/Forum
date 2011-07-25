@@ -10,3 +10,14 @@ blockquote {
   color: #6F6F6F;
   font-style: italic;
 }
+
+a.locale_link {
+  background-color: silver;
+  border: 1px dotted green;
+  border-radius: 5px 5px 5px 5px;
+  bottom: 0;
+  height: 30px;
+  padding-left: 20px;
+  position: fixed;
+  width: 50px;
+}

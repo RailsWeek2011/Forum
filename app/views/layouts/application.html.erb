@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="localisation">
+  <%= link_to I18n.locale, url_for( :locale => local_button ), :class => "locale_link" %>
+</div>
 <div id="main">
 
 <%= yield %>

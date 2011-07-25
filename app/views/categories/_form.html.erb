@@ -4,7 +4,7 @@
     <%= f.hidden_field :category_id %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <h2><%= pluralize(@category.errors.count, "error") +  t(:category_error_msg)  %></h2>
 
       <ul>
       <% @category.errors.full_messages.each do |msg| %>

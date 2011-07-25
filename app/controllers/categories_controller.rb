@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   # GET /categories/new.json
   def new
-    @form_headline = "New Category"
+    @form_headline = t(:category_headline)
     @category = Category.new
     unless params[:id] == "0"
       @parent = Category.find(params[:id])

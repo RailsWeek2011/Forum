@@ -3,8 +3,8 @@
 <div class="new_buttons">
 
 
-    <%= link_to 'New Category', new_category_path(params[:id]), :class => 'btn' %>
-    <%= link_to 'New Thread', new_fred_path(params[:id]), :class => 'btn' %>
+    <%= link_to t(:new_category), new_category_path(params[:id]), :class => 'btn' %>
+    <%= link_to t(:new_thread), new_fred_path(params[:id]), :class => 'btn' %>
 
 </div>
 
@@ -14,8 +14,8 @@
 
 <div class="category">
     <div class="name_category"><%= link_to category.name, category_path(category) %></div>
-    <div class="edit_category"><%= link_to 'Edit', edit_category_path(category) %></div>
-    <div class = "destroy_category"><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></div>
+    <div class="edit_category"><%= link_to t(:edit), edit_category_path(category) %></div>
+    <div class = "destroy_category"><%= link_to t(:destroy), category, confirm: 'Are you sure?', method: :delete %></div>
 </div>
 
 <% end  %>
@@ -28,4 +28,4 @@
 
 <% end %>
 
-<%= link_to 'Back', upper_category %>
+<%= link_to t(:back), upper_category %>
