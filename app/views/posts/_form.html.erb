@@ -18,11 +18,7 @@
 
   <div class="field">
     <%= f.label :content %><br />
-    <% if params[:reply_or_quote] == "quote"  %>
-      <%= raw(f.text_area :content, :value =>  "bq. " + get_quote ) %>
-    <% else  %>
-      <%= f.text_area :content %>
-    <% end  %>
+    <%= raw(f.text_area :content, :value =>  get_quote ) %>
   </div>
 
   <div class="actions">

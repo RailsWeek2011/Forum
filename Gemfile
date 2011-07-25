@@ -13,6 +13,7 @@ gem 'coffee-script'
 gem 'uglifier'
 
 gem 'RedCloth'
+gem 'gravatar_image_tag'
 
 gem 'jquery-rails'
 

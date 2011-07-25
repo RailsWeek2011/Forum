@@ -8,6 +8,7 @@
 
 <div class="initial_post">
   <div class="author_info">
+    <%= gravatar_for @fred.user %>
     <%= render :partial => 'user', :locals => {:user => @fred.user} %>
   </div>
   <div class="actual_post">
@@ -28,6 +29,7 @@
      directReplies.each do |reply|  %>
 <div class="reply_post" id="<%= reply[:id] %>">
   <div class="author_info">
+    <%= gravatar_for reply.user %>
     <%= render :partial => 'user', :locals => {:user => reply.user} %>
   </div>
   <div class="actual_post">
