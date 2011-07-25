@@ -2,9 +2,9 @@
 
 
 
-<div class="post_headline">
+<div class="post_headline"><h1>
   <%= @fred.headline %>
-</div>
+</h1></div>
 
 <div class="initial_post">
   <div class="author_info">
@@ -24,24 +24,26 @@
   </div>
 </div>
 
-<% @fred.posts.each do |post|  %>
-<div class="reply_post">
+<%   directReplies = @fred.posts.where(:post_id => nil).order("created_at DESC")
+     directReplies.each do |reply|  %>
+<div class="reply_post" id="<%= reply[:id] %>">
   <div class="author_info">
     <%= "Autor" %>
   </div>
   <div class="actual_post">
     <div class="posting_head">
-      <%= "#{post[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(post[:created_at])} ago) @Autor" %>
+      <%= "#{reply[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(reply[:created_at])} ago) @Autor" %>
     </div>
     <div class="post_body">
-      <%= post.content %>
+      <%= raw (red_cloth reply.content) %>
     </div>
     <div class="post_footer">
-      <%= link_to "reply", new_post_path(post.id, "post", "reply") %>
-      <%= link_to "quote", new_post_path(post.id, "post", "quote") %>
+      <%= link_to "reply", new_post_path(reply.id, "post", "reply") %>
+      <%= link_to "quote", new_post_path(reply.id, "post", "quote") %>
     </div>
   </div>
 </div>
+<%= render :partial => 'post', :locals => {:node => reply}  %>
 
 <% end  %>
 

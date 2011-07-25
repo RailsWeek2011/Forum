@@ -5,3 +5,8 @@
  *= require_self
  *= require_tree . 
 */
+
+blockquote {
+  color: #6F6F6F;
+  font-style: italic;
+}
