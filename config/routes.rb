@@ -1,8 +1,16 @@
 Forum::Application.routes.draw do
 
+
+  
+
+  root :to => "categories#index"
+
+
+
   
   
   scope "(:locale)", :locale => /en|de/ do
+    devise_for :users
     resources :posts
     resources :freds , :except => [:new]
     resources :categories, :except => [:new]
@@ -14,7 +22,7 @@ Forum::Application.routes.draw do
   match "categories/:id/new" => "categories#new", :as => :new_category, :via => :get
 
   match "freds/:id/new" => "freds#new", :as => :new_fred, :via => :get
-  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

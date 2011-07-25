@@ -1,6 +1,9 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
+  load_and_authorize_resource
+
+
   def index
     @categories = Category.where(:category_id => nil)
 

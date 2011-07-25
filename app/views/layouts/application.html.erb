@@ -12,6 +12,23 @@
 </div>
 <div id="main">
 
+
+  <div id ="Logon Frame">
+    <% unless user_signed_in? %>
+        Hello, you are not logged in!
+        <%= link_to "Login", new_user_session_path %>
+
+    <% else %>
+        Signed in as <%= current_user.nick %>. Not you?
+        <%= link_to "Edit my Profile", edit_user_registration_path %>
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete%>
+    <%end%>
+  </div>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+
 <%= yield %>
 
 <div style="clear:both;"></div>
