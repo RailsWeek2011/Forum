@@ -1,13 +1,19 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+  
+  before_save :set_role
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+         
+  has_many :freds
+  has_many :posts
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :nick, :signature, :remember_me
 
-  attr_accessible :roles
+  attr_accessible :roles_mask
   ROLES = %w[admin moderator user]
 
   def roles=(roles)
@@ -26,6 +32,10 @@ class User < ActiveRecord::Base
 
   def is?(role)
     roles.include?(role.to_s)
+  end
+  
+  def set_role
+    self.roles = %w[user]
   end
 
 end

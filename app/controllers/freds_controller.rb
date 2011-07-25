@@ -29,7 +29,7 @@ class FredsController < ApplicationController
   def new
     @fred = Fred.new
     @parent = Category.find(params[:id])
-    @fred.category = @parent 
+    @fred.category = @parent
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,6 +46,7 @@ class FredsController < ApplicationController
   # POST /freds.json
   def create
     @fred = Fred.new(params[:fred])
+    @fred.user =  current_user
 
     respond_to do |format|
       if @fred.save

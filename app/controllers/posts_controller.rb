@@ -46,6 +46,7 @@ class PostsController < ApplicationController
   def create
     
     @post = Post.new(params[:post])
+    @post.user = current_user
     @fred = Fred.find(@post[:fred_id])
 
     respond_to do |format|

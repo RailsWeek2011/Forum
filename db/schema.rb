@@ -24,12 +24,14 @@ ActiveRecord::Schema.define(:version => 20110725100846) do
   create_table "freds", :force => true do |t|
     t.string   "headline"
     t.string   "content"
+    t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "freds", ["category_id"], :name => "index_freds_on_category_id"
+  add_index "freds", ["user_id"], :name => "index_freds_on_user_id"
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"

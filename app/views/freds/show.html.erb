@@ -8,7 +8,7 @@
 
 <div class="initial_post">
   <div class="author_info">
-    <%= "Autor" %>
+    <%= render :partial => 'user', :locals => {:user => @fred.user} %>
   </div>
   <div class="actual_post">
     <div class="posting_head">
@@ -28,7 +28,7 @@
      directReplies.each do |reply|  %>
 <div class="reply_post" id="<%= reply[:id] %>">
   <div class="author_info">
-    <%= "Autor" %>
+    <%= render :partial => 'user', :locals => {:user => reply.user} %>
   </div>
   <div class="actual_post">
     <div class="posting_head">
@@ -43,7 +43,7 @@
     </div>
   </div>
 </div>
-<%= render :partial => 'post', :locals => {:node => reply}  %>
+<%= render :partial => 'post', :locals => {:node => reply.user}  %>
 
 <% end  %>
 
