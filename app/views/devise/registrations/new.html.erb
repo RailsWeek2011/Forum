@@ -1,4 +1,4 @@
-<h2>Sign the fuck up</h2>
+<h2><%= t(:signup) %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -18,7 +18,9 @@
   <p><%= f.label :signature %><br />
   <%= f.text_field :signature %></p>
 
-  <p><%= f.submit "Sign up" %></p>
+  <p><%= f.submit t(:signup) %></p>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+
+

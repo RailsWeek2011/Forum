@@ -2,7 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  signin: "Sign in"
+  confirmpw: "(wir brauchen dein altes Passwort zur bestaetigung)"
+  password: "Passwort"
+  logout: "Logout"
+  editprofile: "Edit my Profile"
+  login: "Sign in"
+  hello: "Hello, you are not logged in!"
+  hello1: "Hello: "
+  notyou: "Not you?"
   reply: "reply"
   quote: "quote"
   edit: "edit"

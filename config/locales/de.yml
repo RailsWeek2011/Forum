@@ -4,6 +4,15 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+
+  password: "Passwort"
+  logout: "Ausloggen"
+  editprofile: "Profil bearbeiten"
+  login: "Einloggen"
+  hello: "Gruetzi, du bist nicht eingeloggt!"
+  hello1: "Gruess Gott: "
+  notyou: "Bist du nicht?"
+  signup: "Anmelden"
   reply: "antworten"
   quote: "zitieren"
   edit: "bearbeiten"

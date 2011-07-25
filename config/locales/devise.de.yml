@@ -1,0 +1,57 @@
+# Additional translations at http://github.com/plataformatec/devise/wiki/I18n
+
+de:
+  login: "Einloggen"
+  confirmpw: "(wir brauchen dein altes Passwort zur bestaetigung)"
+  signup: "Anmelden"
+  password: "Passwort"
+  errors:
+    messages:
+      expired: "abgelaufen, bitte fordere ein neues"
+      not_found: "nicht gefunden"
+      already_confirmed: "bereits bestaetigt, versuchen sie einloggen"
+      not_locked: "nicht gesperrt"
+      not_saved:
+        one: "1 error verhinderte speichern von %{resource}:"
+        other: "%{count} errors verhinderten speichern von %{resource}:"
+
+  devise:
+    failure:
+      already_authenticated: 'Sie sind bereits eingeloggt.'
+      unauthenticated: 'Einloggen oder anmelden um fortzufahren!'
+      unconfirmed: 'Account bestaetigen um fort zu fahren.'
+      locked: 'Ihr Account ist gesperrt.'
+      invalid: 'Ungueltiges email or Passwort'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Sitzung abgelaufen, neu einloggen.'
+      inactive: 'Account noch nich aktiviert.'
+    sessions:
+      signed_in: 'Anmelden erfolgreich.'
+      signed_out: 'Abmelden erfolgreich.'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Passwort erfolgreich geaendert, sie sind angemeldet.'
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+    confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      signed_up: 'Willkommen! Sie haben sich erfolgreich angemeldet.'
+      inactive_signed_up: 'Anmelden erfolgreich, Einloggen fehlgeschlagen weil: %{reason}.'
+      updated: 'Sie haben ihr Konto erfolgreich aktualisiert.'
+      destroyed: 'Verpiss dich doch! Hier loggt man sich nicht aus, hier wird man ausgeloggt ...'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+    omniauth_callbacks:
+      success: 'Erfolgreich authorisiert vom %{kind} Konto.'
+      failure: 'Konnte sie nicht autorisieren vom %{kind} Konto weil "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Bestaetigungsanweisungen:'
+      reset_password_instructions:
+        subject: 'Passwort reset Optionen'
+      unlock_instructions:
+        subject: 'Entsperr Anweisungen:'
