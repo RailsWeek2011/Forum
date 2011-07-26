@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  flick_moderator: "Mod ON/OFF"
+  flick_admin: "Admin ON/OFF"
   last_post: "last post"
   from: "from"
   showuser: "show"

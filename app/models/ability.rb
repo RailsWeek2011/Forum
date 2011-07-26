@@ -6,9 +6,12 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
+    #common rights for visitors
+    can :read, Category
+    can :read, Fred
+    can :read, Post
 
-    can :read, :all
-
+    #additional rights per Type
     if user.role? :admin
       can :manage, :all
     end

@@ -16,9 +16,15 @@ Forum::Application.routes.draw do
     resources :categories, :except => [:new]
     resource :posts, :except => [:new]
   end
+  #match "users/:id" => "users#flick_user", :as => :flick_user, :via => :user
+
+  #match "users/:id" => "users#flick_moderator", :as => :flick_moderator, :via => :mod
+
+  #match "users/:id" => "users#flick_admin", :as => :flick_admin, :via => :admin
+
   match "users/:id" => "users#destroy", :as => :destroy_user, :via => :delete
 
-  match "users/:id" =>"users#show", :as => :show_user, :via => :get
+  match "users/:id" => "users#show", :as => :show_user, :via => :get
 
   match "users/" => "users#index", :via => :get, :as => :show_users
 

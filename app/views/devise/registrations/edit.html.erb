@@ -22,6 +22,16 @@
   <p><%= f.label :current_password %> <%= t(:confirmpw) %><br />
   <%= f.password_field :current_password %></p>
 
+  <% if can? :manage, User%>
+  <p>
+    <%= f.label :roles  %> //Yeah, it's kinda dumb but helpin out, aint it? <br />
+    <% for role in User::ROLES %>
+        <%= radio_button("user", "roles_mask", role) %>
+    <% end %>
+
+  </p>
+  <%end %>
+
   <p><%= f.submit "Update" %></p>
 <% end %>
 

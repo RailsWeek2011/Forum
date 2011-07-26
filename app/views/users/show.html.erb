@@ -1,12 +1,14 @@
+<p><%= gravatar_for @user %></p>
+
 <p><%= @user.email %></p>
 <p><%= @user.nick %></p>
-<p><%= @user.signature %></p>
 <p><%= @user.created_at %></p>
 <p><%= @user.roles_mask %></p>
 
 <% if can? :manage, @users %>
     <% #mein Vorschlag für destroy %>
     <%= link_to 'Destroy', destroy_user_path(@user), :method => :delete %>
+    <%= link_to 'Edit', edit_user_registration_path(@user) %>
 
 <% end %>
 
