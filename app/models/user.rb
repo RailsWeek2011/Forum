@@ -13,10 +13,11 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :nick, :signature, :remember_me
 
-  attr_accessible :roles_mask, :roles
+  attr_accessible :roles_mask #, :roles
   ROLES = %w[admin moderator user]
 
   def roles=(roles)
+
      self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
   end
 
@@ -36,7 +37,6 @@ class User < ActiveRecord::Base
   
   def set_role
     if self.roles.empty?
-      puts "works"
       self.roles= %w[user]
       #self.save
     end

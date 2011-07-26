@@ -23,6 +23,7 @@ Forum::Application.routes.draw do
     match "freds/:id/new" => "freds#new", :as => :new_fred, :via => :get
   end
 
+
   
 
 
