@@ -13,7 +13,7 @@
             <th><%=user.email%></th>
             <th><%=user.nick%></th>
             <th><%=user.roles.to_s%></th>
-            <th><%= link_to t(:showuser), show_user_path(user)%></th>
+            <th><%= link_to t(:showuser), edit_user_registration_path(user)%></th>
         </tr>
         <%end %>
     </tbody>

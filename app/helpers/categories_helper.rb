@@ -16,6 +16,14 @@ module CategoriesHelper
     
     return fred
   end
+  
+  def count_categories category
+    categories_count = Category.where(:category => category).count
+  end
+  
+  def count_threads category
+    thread_count = Fred.where(:category => category).count
+  end
 
 end
 

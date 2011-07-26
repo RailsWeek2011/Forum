@@ -4,6 +4,7 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  sure: "Bist du sicher?"
   markup: "Du kannst deinen Post mit Textile formatieren. Klicke hier für mehr Infos."
   in_this_Thread: "in diesem Thread"
   flick_moderator: "Mod JA/NEIN"
@@ -16,8 +17,8 @@ de:
   logout: "Ausloggen"
   editprofile: "Profil bearbeiten"
   login: "Einloggen"
-  hello: "Gruetzi, du bist nicht eingeloggt!"
-  hello1: "Gruess Gott: "
+  hello: "Hallo, du bist nicht eingeloggt!"
+  hello1: "Hi, "
   notyou: "Bist du nicht?"
   signup: "Anmelden"
   reply: "antworten"

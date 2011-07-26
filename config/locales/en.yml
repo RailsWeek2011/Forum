@@ -2,6 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  sure: "Are you sure?"
   markup: "You can markup your Post with Textile. Click here for more Infos."
   in_this_thread: "in this Thread"
   flick_moderator: "Mod ON/OFF"
@@ -17,7 +18,7 @@ en:
   editprofile: "Edit my Profile"
   login: "Sign in"
   hello: "Hello, you are not logged in!"
-  hello1: "Hello: "
+  hello1: "Hello "
   notyou: "Not you?"
   reply: "reply"
   quote: "quote"
