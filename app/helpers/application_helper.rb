@@ -1,9 +1,9 @@
 module ApplicationHelper
   def local_button
-    if I18n.locale == "de"
-      "en"
+    if I18n.locale == :de
+      return :en
     else
-      "de"
+      return :de
     end
   end
 end

@@ -10,13 +10,20 @@
     <div class="name_category"><%= link_to category.name, category_path(category) %></div>
 
     <% if can? :update, @categories %>
-        <div class="edit_category"><%= link_to t(:edit), edit_category_path(category) %></div>
+        <div class="edit_category"><%= link_to t(:edit), edit_category_path(category) %>
+        </div>
     <% end %>
     <% if can? :destroy, @categories %>
-        <div class = "destroy_category"><%= link_to t(:destroy), category, confirm: 'Are you sure?', method: :delete %></div>
+        <div class = "destroy_category"><%= link_to t(:destroy), category, confirm: 'Are you sure?', method: :delete %>
+        </div>
     <% end %>
   </div>
 <% end %>
+
+<div class="statistics">
+  <div class="last_posts">
+    
+  </div>
 
 <br />
 

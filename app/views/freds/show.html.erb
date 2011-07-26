@@ -6,14 +6,14 @@
   <%= @fred.headline %>
 </h1></div>
 
-<div class="initial_post">
+<div class="initial_post" id="top">
   <div class="author_info">
     <%= gravatar_for @fred.user %>
     <%= render :partial => 'user', :locals => {:user => @fred.user} %>
   </div>
   <div class="actual_post">
     <div class="posting_head">
-      <%=  "#{@fred[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(@fred[:created_at])}) @Autor" %>
+      <%=  "#{@fred[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(@fred[:created_at])}) " %>
     </div>
     <div class="post_body">
       <%= @fred.content %>
@@ -21,34 +21,18 @@
     <div class="post_footer">
       <%= link_to t(:reply), new_post_path(@fred.id, "thread", "reply") %>
       <%= link_to t(:quote), new_post_path(@fred.id, "thread", "quote") %>
+      <%= show_edit @fred %>
     </div>
   </div>
 </div>
 
 <%   directReplies = @fred.posts.where(:post_id => nil).order("created_at DESC")
      directReplies.each do |reply|  %>
-<div class="reply_post" id="<%= reply[:id] %>">
-  <div class="author_info">
-    <%= gravatar_for reply.user %>
-    <%= render :partial => 'user', :locals => {:user => reply.user} %>
-  </div>
-  <div class="actual_post">
-    <div class="posting_head">
-      <%= "#{reply[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(reply[:created_at])}) @Autor" %>
-    </div>
-    <div class="post_body">
-      <%= raw (red_cloth reply.content) %>
-    </div>
-    <div class="post_footer">
-      <%= link_to t(:reply), new_post_path(reply.id, "post", "reply") %>
-      <%= link_to t(:quote), new_post_path(reply.id, "post", "quote") %>
-    </div>
-  </div>
-</div>
+<%= render :partial => 'posts', :locals => {:reply => reply} %>
 <%= render :partial => 'post', :locals => {:node => reply}  %>
 
 <% end  %>
 
 
-<%= link_to t(:edit), edit_fred_path(@fred) %> |
 <%= link_to t(:back), category_path(@fred.category_id)%>
+

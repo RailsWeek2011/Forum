@@ -19,8 +19,8 @@ module PostsHelper
         unless result.nil?
           content[result..(result+1)] = "bg.."
         end
-        content = content + "p. "
       end
+      content = content + "\n\np. "
       return content
   end
   
@@ -28,6 +28,16 @@ module PostsHelper
     gravatar_image_tag(user.email.downcase, :alt => user.nick,
                                             :class => 'gravatar',
                                             :gravatar => {:size => 40})
+  end
+  
+  def show_edit post
+    if current_user == post.user &&  ((Time.now - post[:created_at]) < 1200 )
+      if post.class == Post
+        link_to t(:edit), edit_post_path(post)
+      else
+        link_to t(:edit), edit_fred_path(post)
+      end
+    end
   end
   
 end

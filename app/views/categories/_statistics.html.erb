@@ -1,0 +1,4 @@
+<%= t(:last_post) %>
+<%= time_ago_in_words((last_post(fred)).created_at) %>
+<%= t(:from) %>
+<%= last_post(fred).user[:nick] %>

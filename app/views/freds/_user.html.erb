@@ -1,5 +1,5 @@
 <% if can? :show, @users %>
-  <%= link_to user.nick, "http://www.google.de", :class => "post_author" %>
+  <%= link_to user.nick, show_user_path(user), :class => "post_author" %>
   <% else %>
   <%= user.nick %>
 <% end %>

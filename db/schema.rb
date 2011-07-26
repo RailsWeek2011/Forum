@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(:version => 20110725100846) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nick"
-    t.string   "signature"
     t.integer  "roles_mask"
   end
 
