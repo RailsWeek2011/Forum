@@ -11,6 +11,7 @@ Forum::Application.routes.draw do
   
   scope "(:locale)", :locale => /en|de/ do
     devise_for :users
+    resources :users
     resources :posts
     resources :freds , :except => [:new]
     resources :categories, :except => [:new]
