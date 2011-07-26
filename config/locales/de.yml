@@ -4,6 +4,8 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  flick_moderator: "Mod JA/NEIN"
+  flick_admin: "Admin JA/NEIN"
   last_post: "letzter beitrag"
   from: "von"
   showuser: "zeigen"

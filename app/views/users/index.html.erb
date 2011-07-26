@@ -4,7 +4,7 @@
         <tr>
           <th>Email</th>
           <th>Nick</th>
-          <th>Signature</th>
+          <th>Role</th>
         </tr>
     </thead>
     <tbody>
@@ -12,7 +12,7 @@
         <tr>
             <th><%=user.email%></th>
             <th><%=user.nick%></th>
-            <th><%=user.signature%></th>
+            <th><%=user.roles.to_s%></th>
             <th><%= link_to t(:showuser), show_user_path(user)%></th>
         </tr>
         <%end %>
