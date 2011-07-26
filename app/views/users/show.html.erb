@@ -8,7 +8,7 @@
 <% if can? :manage, @users %>
     <% #mein Vorschlag für destroy %>
     <%= link_to 'Destroy', destroy_user_path(@user), :method => :delete %>
-    <%= link_to 'Edit', edit_user_registration_path(@user) %>
+    <%= link_to 'Edit', edit_user_path(@user) %>
 
 <% end %>
 

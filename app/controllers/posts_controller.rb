@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   load_and_authorize_resource
+  check_authorization
 
   def index
     @posts = Post.all

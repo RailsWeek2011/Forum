@@ -3,6 +3,7 @@ class FredsController < ApplicationController
   # GET /freds.json
 
   load_and_authorize_resource
+  check_authorization
 
   def index
     @freds = Fred.all

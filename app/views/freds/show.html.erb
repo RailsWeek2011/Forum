@@ -19,9 +19,13 @@
       <%= @fred.content %>
     </div>
     <div class="post_footer">
-      <%= link_to t(:reply), new_post_path(@fred.id, "thread", "reply") %>
-      <%= link_to t(:quote), new_post_path(@fred.id, "thread", "quote") %>
-      <%= show_edit @fred %>
+      <% if can? :create, Post %>
+        <%= link_to t(:reply), new_post_path(@fred.id, "thread", "reply") %>
+        <%= link_to t(:quote), new_post_path(@fred.id, "thread", "quote") %>
+      <%end%>
+      <% if can? :manage, Fred %>
+        <%= show_edit @fred %>
+      <%end%>
     </div>
   </div>
 </div>
