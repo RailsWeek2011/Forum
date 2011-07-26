@@ -1,10 +1,14 @@
 # Additional translations at http://github.com/plataformatec/devise/wiki/I18n
 
 en:
-
-  login: "Sign In"
+  
+  sign_in_with: "Sign in withs"
+  forgot_pw: "Forgot your password?"
+  login: "Sign in"
+  failed_receive: "Didn't receive confirmation instructions?"
+  failed_receive_unlock: "Didn't receive unlock instructions?"
   confirmpw: "(we need your current password to confirm your changes)"
-  signup: "Sign the fuck up"
+  signup: "Sign up"
   errors:
     messages:
       expired: "has expired, please request a new one"

@@ -1,9 +1,14 @@
 # Additional translations at http://github.com/plataformatec/devise/wiki/I18n
 
 de:
-  login: "Einloggen"
-  confirmpw: "(wir brauchen dein altes Passwort zur bestaetigung)"
-  signup: "Anmelden"
+  remember_me: "Erinnern"
+  sign_in_with: "Anmelden mit"
+  forgot_pw: "Passwort vergessen?"
+  login: "Anmelden"
+  failed_receive: "Bestätigungsinfos nicht erhalten?"
+  failed_receive_unlock: "Keine Entsperr-Anweisungen erhalten?"
+  confirmpw: "(wir brauchen dein altes Passwort zur Bestaetigung)"
+  signup: "Registrieren"
   password: "Passwort"
   errors:
     messages:
