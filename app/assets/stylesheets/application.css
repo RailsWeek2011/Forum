@@ -21,3 +21,6 @@ a.locale_link {
   position: fixed;
   width: 50px;
 }
+
+
+.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}

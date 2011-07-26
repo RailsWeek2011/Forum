@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  markup: "You can markup your Post with Textile. Click here for more Infos."
+  in_this_thread: "in this Thread"
   flick_moderator: "Mod ON/OFF"
   flick_admin: "Admin ON/OFF"
   last_post: "last post"

@@ -4,6 +4,8 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  markup: "Du kannst deinen Post mit Textile formatieren. Klicke hier für mehr Infos."
+  in_this_Thread: "in diesem Thread"
   flick_moderator: "Mod JA/NEIN"
   flick_admin: "Admin JA/NEIN"
   last_post: "letzter beitrag"
