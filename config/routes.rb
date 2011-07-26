@@ -11,6 +11,7 @@ Forum::Application.routes.draw do
   
   scope "(:locale)", :locale => /en|de/ do
     devise_for :users
+    resources :users
     resources :posts
     resources :freds , :except => [:new]
     resources :categories, :except => [:new]
@@ -21,7 +22,8 @@ Forum::Application.routes.draw do
   #match "users/:id" => "users#flick_moderator", :as => :flick_moderator, :via => :mod
 
   #match "users/:id" => "users#flick_admin", :as => :flick_admin, :via => :admin
-  match "users/edit/:id" => "users#edit", :as => :edit_user, :via => :get
+
+  #match "users/edit/:id" => "users#edit", :as => :edit_user, :via => :get
 
   match "users/:id" => "users#destroy", :as => :destroy_user, :via => :delete
 

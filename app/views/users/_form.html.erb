@@ -26,10 +26,13 @@
   <%= f.password_field :password_confirmation %></p>
   <% end %>
 
-  <p>
-    <%= f.label :role %><br />
-    <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
-  </p>
+
+
+
+    <%= radio_button("user","roles_mask",1) %><%=f.label :Admin    %><br/>
+    <%= radio_button("user","roles_mask",2) %><%=f.label :Moderator%><br/>
+    <%= radio_button("user","roles_mask",4) %><%=f.label :User     %><br/>
+
 
   <div class="actions">
     <%= f.submit %>

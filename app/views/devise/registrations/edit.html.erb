@@ -9,9 +9,6 @@
   <p><%= f.label :nick %> <i></i><br />
   <%= f.text_field :nick %></p>
 
-  <p><%= f.label :signature %> <i></i><br />
-  <%= f.text_field :signature %></p>
-
 
   <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password %></p>
@@ -28,7 +25,6 @@
     <% for role in User::ROLES %>
         <%= radio_button("user", "roles_mask", role) %>
     <% end %>
-
   </p>
   <%end %>
 
