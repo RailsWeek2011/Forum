@@ -24,3 +24,21 @@ a.locale_link {
 
 
 .notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
+
+.error, .alert, .notice, .success, .info {
+    border: 2px solid #DDDDDD;
+    margin-bottom: 1em;
+    padding: 0.8em;
+}
+
+.error, .alert {
+    background: none repeat scroll 0 0 #FBE3E4;
+    border-color: #FBC2C4;
+    color: #8A1F11;
+}
+
+.success {
+    background: none repeat scroll 0 0 #E6EFC2;
+    border-color: #C6D880;
+    color: #264409;
+}

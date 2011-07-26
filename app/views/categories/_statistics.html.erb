@@ -2,5 +2,5 @@
 <%= time_ago_in_words((last_post(fred)).created_at) %>
 <%= t(:from) %>
 <%= last_post(fred).user[:nick] %>
-<%= pluralize(Post.where(:fred_id => fred.id).count, "Post") %>
+<%= pluralize(Post.where(:fred_id => fred.id).count+1, "Post") %>
 <%= t(:in_this_Thread) %>

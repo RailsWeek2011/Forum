@@ -1,19 +1,19 @@
-<h1> All Users </h1>
+<h1> <%= @headline %> </h1>
 <table id="users" >
     <thead>
         <tr>
-          <th>Email</th>
-          <th>Nick</th>
-          <th>Role</th>
+          <th><%= t(:nick) %></th>
+          <th><%= t(:email) %></th>
+          <th><%= t(:role) %></th>
         </tr>
     </thead>
     <tbody>
         <% @users.each do |user|%>
         <tr>
-            <th><%=user.email%></th>
-            <th><%=user.nick%></th>
-            <th><%=user.roles.to_s%></th>
-            <th><%= link_to t(:showuser), show_user_path(user)%></th>
+            <td><%=user.nick%></td>
+            <td><%=user.email%></td>
+            <td><%=user.roles[0]%></td>
+            <td><%= link_to t(:showuser), show_user_path(user)%></td>
         </tr>
         <%end %>
     </tbody>

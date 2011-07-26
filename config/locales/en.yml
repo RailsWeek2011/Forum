@@ -2,6 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  leave_blank: " (leave blank if you don't want to change it)"
+  effect_gravatar: " (BEWARE: Changing your email-adress will also change your Avatar)"
+  updated_user_success: "User was successfully updated."
+  email: "Email"
+  nick: "Nick"
+  role: "Role"
+  all_users: "All users"
+  contains: "contains"
+  nothing_to_see: "Nothing to see here"
   sure: "Are you sure?"
   markup: "You can markup your Post with Textile. Click here for more Infos."
   in_this_thread: "in this Thread"
@@ -26,6 +35,7 @@ en:
   destroy: "destroy"
   back: "back"
   new_category: "New Category"
+  edit_category: "Edit Category"
   new_thread: "New Thread"
   category_error_msg: "prohibited this category from being saved:"
   category_headline: "New Category"

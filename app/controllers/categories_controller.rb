@@ -46,7 +46,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-    @form_headline = "Edit Category"
+    @form_headline = t(:edit_category)
     @category = Category.find(params[:id])
   end
 

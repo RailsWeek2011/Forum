@@ -11,7 +11,9 @@
   <%= link_to local_button, url_for(:locale => local_button ), :class => "locale_link" %>
 </div>
 <div id="main">
-
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, :class => "flash #{key}") %>
+  <% end %>
 
   <div id ="Logon Frame">
     <% unless user_signed_in? %>
@@ -19,20 +21,17 @@
         <%= link_to t(:login), new_user_session_path %>
 
     <% else %>
-        <%= t(:hello1) %> <%= current_user.nick %>. <%= t(:notyou) %>
+        <%= t(:hello1) %> <%= current_user.nick %>
         <%= link_to t(:editprofile), edit_user_registration_path %>
-        <%= link_to t(:logout), destroy_user_session_path, :method => :delete%>
         <%= link_to t(:showusers), show_users_path %>
+        <%= link_to t(:logout), destroy_user_session_path, :method => :delete%>
     <%end%>
   </div>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
 
 <%= yield %>
 
 <div style="clear:both;"></div>
 </div>
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>

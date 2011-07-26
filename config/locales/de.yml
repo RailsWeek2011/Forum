@@ -4,6 +4,15 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  leave_blank: " (freilassen, wenn du es nicht ändern willst)"
+  effect_gravatar: " (ACHTUNG: Ändern der Email-Adresse wird auch eine Änderung des Avatars zur Folge haben)"
+  updated_user_success: "User wurde aktualisiert"
+  email: "Email"
+  nick: "Nick"
+  role: "Rolle"
+  all_users: "Alle User"
+  contains: "enthält"
+  nothing_to_see: "Hier gibts noch keine Einträge"
   sure: "Bist du sicher?"
   markup: "Du kannst deinen Post mit Textile formatieren. Klicke hier für mehr Infos."
   in_this_Thread: "in diesem Thread"
@@ -27,6 +36,7 @@ de:
   destroy: "löschen"
   back: "zurück"
   new_category: "Neue Kategorie"
+  edit_category: "Kategorie bearbeiten"
   new_thread: "Neuer Thread"
   category_error_msg: "verhinderten, dass diese Kategorie gespeichert wird"
   category_headline: "Neue Kategorie"

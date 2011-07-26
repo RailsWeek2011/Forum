@@ -18,11 +18,11 @@ module CategoriesHelper
   end
   
   def count_categories category
-    categories_count = Category.where(:category => category).count
+    categories_count = Category.where(:category_id => category[:id]).count
   end
   
   def count_threads category
-    thread_count = Fred.where(:category => category).count
+    thread_count = Fred.where(:category_id => category[:id]).count
   end
 
 end

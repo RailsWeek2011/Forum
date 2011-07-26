@@ -1,7 +1,7 @@
 # Additional translations at http://github.com/plataformatec/devise/wiki/I18n
 
 en:
-  
+  cancel_account: "Cancel my account"
   sign_in_with: "Sign in withs"
   forgot_pw: "Forgot your password?"
   login: "Sign in"

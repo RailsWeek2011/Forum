@@ -4,10 +4,17 @@
   <% end %>
 </div>
 
+<% if @categories.empty? && @freds.empty?  %>
+<% flash.now[:notice] = t(:nothing_to_see) %>
+<% end %>
 
 <% @categories.each do |category| %>
   <div class="category">
     <div class="name_category"><%= link_to category.name, category_path(category) %></div>
+    <div class="count_kinds"><%= t(:contains) %>
+         <%= pluralize(count_categories(category), "Category") + ", " %>
+         <%= pluralize(count_threads(category), "Thread") %>
+    </div>
     
 
     <% if can? :update, @categories %>
@@ -21,10 +28,5 @@
   </div>
 <% end %>
 
-<div class="statistics">
-  <div class="last_posts">
-    
-  </div>
-</div>
 
 <br />

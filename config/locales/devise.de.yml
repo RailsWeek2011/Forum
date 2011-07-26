@@ -1,6 +1,7 @@
 # Additional translations at http://github.com/plataformatec/devise/wiki/I18n
 
 de:
+  cancel_account: "Meinen Account löschen"
   remember_me: "Erinnern"
   sign_in_with: "Anmelden mit"
   forgot_pw: "Passwort vergessen?"
