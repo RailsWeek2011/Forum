@@ -28,6 +28,7 @@ class FredsController < ApplicationController
   # GET /freds/new
   # GET /freds/new.json
   def new
+    @headline = t(:new_thread)
     @fred = Fred.new
     @parent = Category.find(params[:id])
     @fred.category = @parent
@@ -51,7 +52,7 @@ class FredsController < ApplicationController
 
     respond_to do |format|
       if @fred.save
-        format.html { redirect_to @fred, notice: 'Thread was successfully created.' }
+        format.html { redirect_to @fred, notice: t(:thread_created) }
         format.json { render json: @fred, status: :created, location: @fred }
       else
         format.html { render action: "new" }
@@ -80,10 +81,12 @@ class FredsController < ApplicationController
   # DELETE /freds/1.json
   def destroy
     @fred = Fred.find(params[:id])
+    category_id = @fred[:category_id]
+    Post.where(:fred_id => @fred[:id]).destroy_all
     @fred.destroy
 
     respond_to do |format|
-      format.html { redirect_to freds_url }
+      format.html { redirect_to category_path(category_id), :method => :get, :notice => t(:deleted_thread_success) }
       format.json { head :ok }
     end
   end

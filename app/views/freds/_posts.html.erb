@@ -1,7 +1,7 @@
 <div class="reply_post" id="<%= reply[:id] %>">
   <div class="author_info">
     <%= gravatar_for reply.user %>
-    <%= render :partial => 'user', :locals => {:user => reply.user} %>
+    <%= link_to_user reply.user %>
   </div>
   <div class="actual_post">
     <div class="posting_head">
@@ -12,9 +12,14 @@
       <%= raw (red_cloth reply.content) %>
     </div>
     <div class="post_footer">
+      <% if can? :create, Post %>
       <%= link_to t(:reply), new_post_path(reply.id, "post", "reply") %>
       <%= link_to t(:quote), new_post_path(reply.id, "post", "quote") %>
       <%= show_edit reply %>
+      <% end %>
+      <% if can? :destroy, Post %>
+        <%= link_to t(:destroy), post_path(reply.id), :method => :delete, :confirm => t(:sure)  %>
+      <% end  %>
     </div>
   </div>
 </div>

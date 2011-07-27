@@ -2,9 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  sure_delete_thread: "Are you sure? This will delete the hole thread!"
   leave_blank: " (leave blank if you don't want to change it)"
   effect_gravatar: " (BEWARE: Changing your email-adress will also change your Avatar)"
   updated_user_success: "User was successfully updated."
+  created_post_success: "Post was successfully created."
+  updated_post_success: "Post was successfully updated."
+  deleted_thread_success: "Thread was successfully deleted."
+  deleted_post_success: "Posts were successfully deleted."
   email: "Email"
   nick: "Nick"
   role: "Role"
@@ -37,6 +42,7 @@ en:
   new_category: "New Category"
   edit_category: "Edit Category"
   new_thread: "New Thread"
+  thread_created: "Thread was successfully created."
   category_error_msg: "prohibited this category from being saved:"
   category_headline: "New Category"
   date:

@@ -40,4 +40,16 @@ module PostsHelper
     end
   end
   
+  def link_to_user user
+    if can? :show, @users
+      if current_user && user.alive
+        if current_user == user
+          return link_to user.nick, edit_user_path(user), :class => "post_author"
+        end
+          return link_to user.nick, show_user_path(user), :class => "post_author"
+      end
+    end
+      return user.nick
+  end
+  
 end

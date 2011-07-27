@@ -3,7 +3,7 @@
   <%= f.hidden_field :category_id %>
   <% if @fred.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@fred.errors.count, "error") %> prohibited this fred from being saved:</h2>
+      <h2><%= pluralize(@fred.errors.count, "error") %> prohibited this Thread from being saved:</h2>
 
       <ul>
       <% @fred.errors.full_messages.each do |msg| %>
@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   </div>
 
   <div class="actions">

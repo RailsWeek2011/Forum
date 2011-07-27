@@ -9,7 +9,7 @@
 <div class="initial_post" id="top">
   <div class="author_info">
     <%= gravatar_for @fred.user %>
-    <%= render :partial => 'user', :locals => {:user => @fred.user} %>
+    <%= link_to_user @fred.user %>
   </div>
   <div class="actual_post">
     <div class="posting_head">
@@ -26,6 +26,9 @@
       <% if can? :manage, Fred %>
         <%= show_edit @fred %>
       <%end%>
+      <% if can? :destroy, Fred %>
+        <%= link_to t(:destroy), fred_path(@fred.id), :method => :delete, :confirm => t(:sure_delete_thread)  %>
+      <% end  %>
     </div>
   </div>
 </div>

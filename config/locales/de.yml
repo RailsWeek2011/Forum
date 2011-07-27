@@ -4,9 +4,14 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  sure_delete_thread: "Bist du sicher? Dies wird den gesamten Thread löschen!"
   leave_blank: " (freilassen, wenn du es nicht ändern willst)"
   effect_gravatar: " (ACHTUNG: Ändern der Email-Adresse wird auch eine Änderung des Avatars zur Folge haben)"
-  updated_user_success: "User wurde aktualisiert"
+  updated_user_success: "User wurde erfolgreich aktualisiert"
+  created_post_success: "Post wurde erfolgreich erstellt."
+  updated_post_success: "Post wurde erfolgreich aktualisiert"
+  deleted_thread_success: "Thread wurde erfolgreich gelöscht"
+  deleted_post_success: "Posts wurden erfolgreich gelöscht"
   email: "Email"
   nick: "Nick"
   role: "Rolle"
@@ -38,6 +43,7 @@ de:
   new_category: "Neue Kategorie"
   edit_category: "Kategorie bearbeiten"
   new_thread: "Neuer Thread"
+  thread_created: "Thread wurde erfolgreich erstellt"
   category_error_msg: "verhinderten, dass diese Kategorie gespeichert wird"
   category_headline: "Neue Kategorie"
   date:
