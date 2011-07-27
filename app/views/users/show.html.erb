@@ -22,7 +22,12 @@
         </tr>
         <tr>
             <td>Last Sign in: </td>
+            <% if @user.last_sign_in_at != nil%>
             <td><%=@user.last_sign_in_at.strftime("%B %d, %Y")%></td>
+            <% else %>
+            <% @user.last_sign_in_at= Time.now %>
+            <td><%=@user.last_sign_in_at.strftime("%B %d, %Y")%></td>
+            <% end%>
         </tr>
         <tr>
             <td>Sign ups: </td>
@@ -62,7 +67,7 @@
     <th></th>
   </tr>
 
-  <% if params[:flag]=="yousuck" %>
+  <% if params[:flag]=="limited" %>
 
     <% result = Post.limit(1).order("created_at DESC").find_all_by_user_id(@user.id) %>
   <% else %>
@@ -80,10 +85,10 @@
   </tr>
 <% end %>
 </table>
-  <% if params[:flag] == "yousuck" %>
-    <%= link_to t(:moar), show_user_path("yousuckhard",@user) %>
+  <% if params[:flag] == "limited" %>
+    <%= link_to t(:moar), show_user_path("unlimited",@user) %>
   <% else %>
-    <%= link_to t(:less), show_user_path("yousuck",@user) %>
+    <%= link_to t(:less), show_user_path("limited",@user) %>
   <% end %>
 </div>
 

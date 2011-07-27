@@ -8,19 +8,19 @@
 
 category = Category.create([{ name: 'Foobar'}, {name: 'Barfoo'}, {name: 'Blub', category_id: 1}])
 
-user = User.create :email => "admin@a.de", :password => "123456", :password_confirm => "123456", :nick => "Gott", :alive => true
+user = User.create :email => "admin@a.de", :password => "123456", :password_confirm => "123456", :nick => "ADMIN", :alive => true, :created_at => Time.now, :last_sign_in_at => Time.now
 user = User.first
 user.roles = %w[admin]
 user.save
 
-user = User.create :email => "a@a.de", :password => "123456", :password_confirm => "123456", :nick => "Anton", :alive => true
+user = User.create :email => "a@a.de", :password => "123456", :password_confirm => "123456", :nick => "BBKing", :alive => true, :created_at => Time.now, :last_sign_in_at => Time.now
 
-user = User.create :email => "ab@a.de", :password => "123456", :password_confirm => "123456", :nick => "Gustaf", :alive => true
+user = User.create :email => "ab@a.de", :password => "123456", :password_confirm => "123456", :nick => "ChuckBerry", :alive => true, :created_at => Time.now, :last_sign_in_at => Time.now
 
-user = User.create :email => "abc@a.de", :password => "123456", :password_confirm => "123456", :nick => "Hans", :alive => true
+user = User.create :email => "abc@a.de", :password => "123456", :password_confirm => "123456", :nick => "AngusYoung", :alive => true, :created_at => Time.now, :last_sign_in_at => Time.now
 
-user = User.create :email => "abcd@a.de", :password => "123456", :password_confirm => "123456", :nick => "Edeltraut", :alive => true
+user = User.create :email => "abcd@a.de", :password => "123456", :password_confirm => "123456", :nick => "SRV", :alive => true, :created_at => Time.now, :last_sign_in_at => Time.now
 
-user = User.create :email => "abcde@a.de", :password => "123456", :password_confirm => "123456", :nick => "Michel", :alive => true
+user = User.create :email => "abcde@a.de", :password => "123456", :password_confirm => "123456", :nick => "GlennMiller", :alive => true, :created_at => Time.now, :last_sign_in_at => Time.now
 
-user = User.create :email => "abcdef@a.de", :password => "123456", :password_confirm => "123456", :nick => "Georg", :alive => true
+user = User.create :email => "abcdef@a.de", :password => "123456", :password_confirm => "123456", :nick => "JimmyPage", :alive => true, :created_at => Time.now, :last_sign_in_at => Time.now

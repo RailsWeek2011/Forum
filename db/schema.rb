@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20110725100847) do
 
   create_table "freds", :force => true do |t|
     t.string   "headline"
-    t.string   "content"
+    t.text     "content"
     t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at"
