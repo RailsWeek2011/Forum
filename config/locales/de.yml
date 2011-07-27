@@ -24,7 +24,7 @@ de:
   created_post_success: "Post wurde erfolgreich erstellt."
   updated_post_success: "Post wurde erfolgreich aktualisiert"
   deleted_thread_success: "Thread wurde erfolgreich gelöscht"
-  deleted_post_success: "Posts wurden erfolgreich gelöscht"
+  deleted_post_success: "Post wurde erfolgreich gelöscht"
   deleted_category_success: "Kategorie erfolgreich gelöscht"
   email: "Email"
   nick: "Name"

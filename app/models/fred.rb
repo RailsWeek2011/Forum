@@ -9,12 +9,10 @@ class Fred < ActiveRecord::Base
     self.headline
   end
 
-  def delete_fred_context
+  def delete_context
     posts = Post.where(:fred_id => self.id)
-    unless posts.nil?
-      posts.each do |p|
-        p.delete_post_context
-      end
+    posts.each do |p|
+      p.delete_context
     end
     self.destroy
   end

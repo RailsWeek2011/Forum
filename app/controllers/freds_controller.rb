@@ -73,10 +73,11 @@ class FredsController < ApplicationController
   # DELETE /freds/1.json
   def destroy
     @fred = Fred.find(params[:id])
-    @fred.delete_fred_context  #the new method
+    categoryid = @fred.category_id
+    @fred.delete_context  #the new method
 
     respond_to do |format|
-      format.html { redirect_to category_path(category_id), :method => :get, :notice => t(:deleted_thread_success) }
+      format.html { redirect_to category_path(categoryid), :method => :get, :notice => t(:deleted_thread_success) }
       format.json { head :ok }
     end
   end

@@ -66,10 +66,11 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
-    @post.delete_post_context        #the new methods, more elegant to me
+    fredid = @post.fred_id
+    @post.delete_context        #the new methods, more elegant to me
 
     respond_to do |format|
-      format.html { redirect_to fred_path(@post[:fred_id]), :method => :get, :notice  => t(:deleted_post_success) }
+      format.html { redirect_to fred_path(fredid), :method => :get, :notice  => t(:deleted_post_success) }
       format.json { head :ok }
     end
   end
@@ -88,14 +89,5 @@ class PostsController < ApplicationController
     
     @post[:fred_id] = thread_id
   end
-  
-  def destroy_all_kinds reply
-    replies = Post.where(:post_id => reply[:id])
-    unless replies.empty?
-      replies.each do |reply|
-        destroy_all_kinds reply
-      end
-    end
-    Post.where(:id => reply[:id]).delete_all
-  end
+
 end

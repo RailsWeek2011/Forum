@@ -7,14 +7,11 @@ class Post < ActiveRecord::Base
   
   scope :latest, order("created_at DESC").limit(10)
 
-  def delete_post_context
+  def delete_context
     posts = Post.where(:post_id => self.id)
-    unless posts.nil?
-      posts.each do |p|
-        p.delete_post_context
-      end
+    posts.each do |p|
+      p.delete_context
     end
     self.destroy
   end
-  
 end
