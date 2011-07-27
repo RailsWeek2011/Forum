@@ -48,6 +48,7 @@ module PostsHelper
         end
           return link_to user.nick, show_user_path(user), :class => "post_author"
       end
+      
     end
       return user.nick
   end

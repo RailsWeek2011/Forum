@@ -88,11 +88,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def alive?
-    @user.alive
-  end
   
-  def deleted? user
-    !user.alive
-  end
+  
+  
 end
