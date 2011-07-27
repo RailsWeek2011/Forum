@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  nick_too_short: "Nickname must have at least %{count} characters"
+  nick_too_long: "Nickname must have at most %{count} characters"
   signupdate: "Signup date"
   signindate: "Last SignIn"
   signups: "Signups"
@@ -17,6 +19,8 @@ en:
   updated_user_success: "User was successfully updated."
   created_post_success: "Post was successfully created."
   updated_post_success: "Post was successfully updated."
+  created_category_success: "Category was successfully created."
+  updated_category_success: "Category was successfully updated."
   deleted_thread_success: "Thread was successfully deleted."
   deleted_post_success: "Posts were successfully deleted."
   email: "Email"
@@ -52,9 +56,15 @@ en:
   new_category: "New Category"
   edit_category: "Edit Category"
   new_thread: "New Thread"
+  edit_thread: "Edit Thread"
+  new_post: "New Post"
+  edit_post: "Edit Post"
+  new_password: "New Password"
   thread_created: "Thread was successfully created."
+  user_error_msg: "prohibited this user from being saved:"
   category_error_msg: "prohibited this category from being saved:"
   category_headline: "New Category"
+  all_users: "All User"
   date:
     formats:
       default: "%Y-%m-%d"

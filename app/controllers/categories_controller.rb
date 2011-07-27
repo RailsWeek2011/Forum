@@ -57,7 +57,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: params}
+        format.html { redirect_to @category, notice: t(:created_category_success)}
         format.json { render json: @category, status: :created, location: @category }
       else
         format.html { render action: "new" }

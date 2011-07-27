@@ -28,6 +28,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @headline = t(:new_post)
     
     initialize_post
 
@@ -40,6 +41,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @headline = t(:edit_post)
   end
 
   # POST /posts

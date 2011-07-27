@@ -1,7 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-
-
 <div class="post_headline"><h1>
   <%= @fred.headline %>
 </h1></div>
@@ -16,7 +12,7 @@
       <%=  "#{@fred[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(@fred[:created_at])}) " %>
     </div>
     <div class="post_body">
-      <%= @fred.content %>
+      <%= raw (red_cloth @fred.content) %>
     </div>
     <div class="post_footer">
       <% if can? :create, Post %>

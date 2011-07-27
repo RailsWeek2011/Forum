@@ -1,6 +1,5 @@
-<h1>Editing Thread</h1>
+<h1><%= @headline %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @fred %> |
-<%= link_to 'Back', category_path(@fred.category_id) %>
+<%= link_to t(:back), category_path(@fred.category_id) %>

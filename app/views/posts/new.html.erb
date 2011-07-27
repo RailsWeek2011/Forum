@@ -1,7 +1,7 @@
-<h1>New post</h1>
+<h1><%= @headline %></h1>
 
 <%= render 'form' %>
 
 <%= link_to t(:markup), "http://redcloth.org/" %>
 
-<%= link_to 'Back', fred_path %>
+<%= link_to t(:back), fred_path %>

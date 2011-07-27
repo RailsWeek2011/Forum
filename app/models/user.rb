@@ -9,11 +9,19 @@ class User < ActiveRecord::Base
          
   has_many :freds
   has_many :posts
+  
+  validates :nick, :presence => true, :uniqueness => true, :allow_blank => false, :length {
+            :minimum => 3,
+            :maximum => 15,
+            :too_short => t(:nick_too_short),
+            :too_long => t(:nick_too_long)
+          }
+  
+  
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :nick, :signature, :remember_me, :alive
+  attr_accessible :email, :password, :password_confirmation, :nick, :signature, :remember_me, :alive, :roles_mask
 
-  attr_accessible :roles_mask #, :roles
   ROLES = %w[admin moderator user]
 
   def roles=(roles)

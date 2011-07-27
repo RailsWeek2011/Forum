@@ -4,6 +4,8 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  nick_too_short: "Nickname muss mindestens %{count} lang sein"
+  nick_too_long: "Nickname darf höchstens %{count} lang sein"
   signupdate: "Anmeldedatum"
   signindate: "Letzter Besuch"
   signups: "Anmeldungen"
@@ -17,6 +19,8 @@ de:
   leave_blank: " (freilassen, wenn du es nicht ändern willst)"
   effect_gravatar: " (ACHTUNG: Ändern der Email-Adresse wird auch eine Änderung des Avatars zur Folge haben)"
   updated_user_success: "User wurde erfolgreich aktualisiert"
+  created_category_success: "Kategorie wurde erfolgreich gespeichert"
+  created_category_success: "Kategorie wurde erfolgreich aktualisiert"
   created_post_success: "Post wurde erfolgreich erstellt."
   updated_post_success: "Post wurde erfolgreich aktualisiert"
   deleted_thread_success: "Thread wurde erfolgreich gelöscht"
@@ -53,9 +57,15 @@ de:
   new_category: "Neue Kategorie"
   edit_category: "Kategorie bearbeiten"
   new_thread: "Neuer Thread"
+  edit_thread: "Thread bearbeiten"
+  new_post: "Neuer Post"
+  new_password: "Neues Passwort"
+  edit_post: "Post bearbeiten"
   thread_created: "Thread wurde erfolgreich erstellt"
-  category_error_msg: "verhinderten, dass diese Kategorie gespeichert wird"
+  user_error_msg: "verhinderten, dass dieser User gespeichert wird:"
+  category_error_msg: "verhinderten, dass diese Kategorie gespeichert wird:"
   category_headline: "Neue Kategorie"
+  all_users: "Alle User"
   date:
     formats:
       default: "%d.%m.%Y"

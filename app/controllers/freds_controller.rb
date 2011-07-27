@@ -42,6 +42,7 @@ class FredsController < ApplicationController
   # GET /freds/1/edit
   def edit
     @fred = Fred.find(params[:id])
+    @headline = t(:edit_thread)
   end
 
   # POST /freds

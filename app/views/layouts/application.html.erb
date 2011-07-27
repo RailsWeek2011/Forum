@@ -11,10 +11,6 @@
   <%= link_to local_button, url_for(params.merge(:locale=> local_button)), :class => "locale_link" %>
 </div>
 <div id="main">
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, :class => "flash #{key}") %>
-  <% end %>
-
   <div id ="Logon Frame">
     <% unless user_signed_in? %>
         <%= t(:hello) %>
@@ -27,6 +23,10 @@
         <%= link_to t(:logout), destroy_user_session_path, :method => :delete%>
     <%end%>
   </div>
+  
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, :class => "flash #{key}") %>
+  <% end %>
 
 <%= yield %>
 
