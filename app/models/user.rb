@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :freds
   has_many :posts
   
-  validates :nick, :presence => true, :uniqueness => true, :allow_blank => false, :length {
+  validates :nick, :presence => true, :uniqueness => true, :allow_blank => false, :length => { 
             :minimum => 3,
             :maximum => 15,
             :too_short => t(:nick_too_short),
