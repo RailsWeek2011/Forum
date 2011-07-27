@@ -2,6 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  content: "Content"
+  thread: "Thread"
+  less: "less"
+  moar: "MOOOOAAAAAR!"
   leave_blank: " (leave blank if you don't want to change it)"
   effect_gravatar: " (BEWARE: Changing your email-adress will also change your Avatar)"
   updated_user_success: "User was successfully updated."
