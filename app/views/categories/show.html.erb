@@ -9,6 +9,10 @@
 
 </div>
 
+<%= render :partial => 'categories' %>
+
+
+
 
 <% @freds.each do |fred|  %>
 
@@ -21,4 +25,6 @@
 
 <% end %>
 
-<%= link_to t(:back), upper_category %>
+<div class="back">
+    <%= link_to t(:back), upper_category%>
+</div>
