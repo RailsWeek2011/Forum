@@ -88,10 +88,10 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.delete_context  #there you go, this little fatty kills em all!
-                              #fred and post have equal methods
+                              #fred and post have equal methods, makes it slim and easy
 
     respond_to do |format|
-      format.html { redirect_to categories_url }
+      format.html { redirect_to categories_url, :method => :get, :notice => t(:deleted_category_success) }
       format.json { head :ok }
     end
   end

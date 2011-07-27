@@ -25,44 +25,6 @@ module CategoriesHelper
     thread_count = Fred.where(:category_id => category[:id]).count
   end
 
-
-  #so dumb of me to even think of putting that here!
-  def delete_content category
-    cate = Category.where(:category_id => category.id)
-    unless cate.nil?
-      cate.each do |c|
-        delete_content c
-      end
-    end
-    fred = Fred.where(:category_id => category.id)
-    unless fred.nil?
-      fred.each do |f|
-        delete_fred_content fred
-      end
-    end
-    category.destroy
-  end
-
-  def delete_fred_content fred
-    posts = Post.where(:fred_id => fred.id)
-    unless posts.nil?
-      post.each do |p|
-        delete_post_content p
-      end
-    end
-    fred.destroy
-  end
-
-  def delete_post_content post
-    posts = Post.where(:post_id => post.id)
-    unless posts.nil?
-      posts.each do |p|
-        delete_post_content p
-      end
-    end
-    post.destroy
-  end
-
 end
 
 

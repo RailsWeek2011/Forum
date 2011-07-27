@@ -73,9 +73,7 @@ class FredsController < ApplicationController
   # DELETE /freds/1.json
   def destroy
     @fred = Fred.find(params[:id])
-    category_id = @fred[:category_id]
-    Post.where(:fred_id => @fred[:id]).destroy_all
-    @fred.destroy
+    @fred.delete_fred_context  #the new method
 
     respond_to do |format|
       format.html { redirect_to category_path(category_id), :method => :get, :notice => t(:deleted_thread_success) }

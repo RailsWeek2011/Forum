@@ -23,6 +23,7 @@ en:
   updated_category_success: "Category was successfully updated."
   deleted_thread_success: "Thread was successfully deleted."
   deleted_post_success: "Posts were successfully deleted."
+  deleted_category_success: "Category was successfully deleted."
   email: "Email"
   nick: "Nick"
   role: "Role"
