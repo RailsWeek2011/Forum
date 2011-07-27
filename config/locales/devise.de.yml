@@ -46,7 +46,7 @@ de:
       signed_up: 'Willkommen! Sie haben sich erfolgreich angemeldet.'
       inactive_signed_up: 'Anmelden erfolgreich, Einloggen fehlgeschlagen weil: %{reason}.'
       updated: 'Sie haben ihr Konto erfolgreich aktualisiert.'
-      destroyed: 'Verpiss dich doch! Hier loggt man sich nicht aus, hier wird man ausgeloggt ...'
+      destroyed: 'Dein Account wurde erfolgreich gelöscht'
     unlocks:
       send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
       unlocked: 'Your account was successfully unlocked. You are now signed in.'

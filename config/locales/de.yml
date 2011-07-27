@@ -62,6 +62,7 @@ de:
   new_password: "Neues Passwort"
   edit_post: "Post bearbeiten"
   thread_created: "Thread wurde erfolgreich erstellt"
+  thread_updated: "Thread wurde erfolgreich aktualisiert"
   user_error_msg: "verhinderten, dass dieser User gespeichert wird:"
   category_error_msg: "verhinderten, dass diese Kategorie gespeichert wird:"
   category_headline: "Neue Kategorie"

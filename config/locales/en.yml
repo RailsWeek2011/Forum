@@ -61,6 +61,7 @@ en:
   edit_post: "Edit Post"
   new_password: "New Password"
   thread_created: "Thread was successfully created."
+  thread_updated: "Thread was successfully updated."
   user_error_msg: "prohibited this user from being saved:"
   category_error_msg: "prohibited this category from being saved:"
   category_headline: "New Category"

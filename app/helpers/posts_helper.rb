@@ -44,7 +44,7 @@ module PostsHelper
     if can? :show, @users
       if current_user && user.alive
         if current_user == user
-          return link_to user.nick, edit_user_path(user), :class => "post_author"
+          return link_to user.nick, edit_user_registration_path, :class => "post_author"
         end
           return link_to user.nick, show_user_path(user), :class => "post_author"
       end

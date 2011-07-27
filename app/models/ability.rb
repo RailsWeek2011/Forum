@@ -17,13 +17,17 @@ class Ability
     end
 
     if user.role? :moderator
-      can :manage, Fred, Post
+      can :manage, Fred
+      can :manage, Post
+      can :read, :all
     end
 
     if user.role? :user
       can :read, :all
       can :create, Post
+      can :update, Post
       can :create, Fred
+      can :update, Fred
     end
 
 

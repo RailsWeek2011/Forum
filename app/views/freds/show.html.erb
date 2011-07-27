@@ -19,7 +19,7 @@
         <%= link_to t(:reply), new_post_path(@fred.id, "thread", "reply") %>
         <%= link_to t(:quote), new_post_path(@fred.id, "thread", "quote") %>
       <%end%>
-      <% if can? :manage, Fred %>
+      <% if can? :update, Fred %>
         <%= show_edit @fred %>
       <%end%>
       <% if can? :destroy, Fred %>

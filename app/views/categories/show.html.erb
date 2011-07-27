@@ -1,9 +1,11 @@
 <div class="new_buttons">
 
-    <% if can? :manage, Category %>
+    <% if can? :create, Category %>
         <%= link_to t(:new_category), new_category_path(params[:id]), :class => 'btn' %>
-        <%= link_to t(:new_thread), new_fred_path(params[:id]), :class => 'btn' %>
     <% end%>
+    <% if can? :create, Fred  %>
+        <%= link_to t(:new_thread), new_fred_path(params[:id]), :class => 'btn' %>
+    <% end %>
 
 </div>
 
