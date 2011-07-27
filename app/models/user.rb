@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
 
-  before_save :set_role
+  before_save :set_role, :set_alive
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -39,6 +39,12 @@ class User < ActiveRecord::Base
     if self.roles.empty?
       self.roles= %w[user]
       #self.save
+    end
+  end
+  
+  def set_alive
+    if self.alive.nil?
+      self.alive = true
     end
   end
   
