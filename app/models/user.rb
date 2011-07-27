@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :posts
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :nick, :signature, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :nick, :signature, :remember_me, :alive
 
   attr_accessible :roles_mask #, :roles
   ROLES = %w[admin moderator user]
@@ -40,6 +40,14 @@ class User < ActiveRecord::Base
       self.roles= %w[user]
       #self.save
     end
+  end
+  
+  def alive?
+    self.alive
+  end
+  
+  def deleted?
+    !self.alive
   end
 
 end

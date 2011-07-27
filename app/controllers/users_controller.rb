@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
 
   def index
-    @users = User.order("nick ASC")
+    @users = User.where(:alive => true).order("nick ASC")
     @headline = t(:all_users)
     respond_to do |format|
       format.html # index.html.erb
@@ -21,6 +21,11 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    
+    if @user.deleted?
+      redirect_to root_url, :error => t(:tried_show_deleted_user)
+    end
+    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -56,7 +61,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    update = {:nick => 'Deleted User', :email => 'deleted_user@example.com'}
+    update = {:nick => 'Deleted User', :email => 'deleted_user@example.com', :alive => false}
     @user.update_attributes(update)
 
     respond_to do |format|
@@ -82,4 +87,8 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  
+  
+  
 end

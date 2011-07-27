@@ -33,6 +33,7 @@ en:
   last_post: "last post"
   from: "from"
   showuser: "show"
+  tried_show_deleted_user: "You don't have permission to view this user"
   showusers: "Users"
   signin: "Sign in"
   confirmpw: "(wir brauchen dein altes Passwort zur bestaetigung)"
