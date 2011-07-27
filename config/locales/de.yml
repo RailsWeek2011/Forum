@@ -30,6 +30,7 @@ de:
   last_post: "letzter beitrag"
   from: "von"
   showuser: "zeigen"
+  tried_show_deleted_user: "Kein Zugriff auf diesen User möglich"
   showusers: "Benutzerliste"
   password: "Passwort"
   logout: "Ausloggen"
