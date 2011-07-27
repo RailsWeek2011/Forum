@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  signupdate: "Signup date"
+  signindate: "Last SignIn"
+  signups: "Signups"
+  posts: "Posts"
+  threads: "Threads"
   sure_delete_thread: "Are you sure? This will delete the hole thread!"
   content: "Content"
   thread: "Thread"
