@@ -18,15 +18,15 @@
         </tr>
         <tr>
             <td><%= t(:signupdate) %>: </td>
-            <td><%=@user.created_at.strftime("%B %d, %Y")%></td>
+            <td><%=@user.created_at.strftime("%e/%m/%Y")%></td>
         </tr>
         <tr>
             <td><%= t(:signindate) %>: </td>
             <% if @user.last_sign_in_at != nil%>
-            <td><%=@user.last_sign_in_at.strftime("%B %d, %Y")%></td>
+            <td><%=@user.last_sign_in_at.strftime("%e/%m/%Y @ %H:%M")%></td>
             <% else %>
-            <% @user.last_sign_in_at= Time.now %>
-            <td><%=@user.last_sign_in_at.strftime("%B %d, %Y")%></td>
+            <% @user.last_sign_in_at= Time.utc(1492,8,3,20,15,10) %>
+            <td><%=@user.last_sign_in_at.strftime("%H:%M @ %e/%m/%Y")%></td>
             <% end%>
         </tr>
         <tr>
