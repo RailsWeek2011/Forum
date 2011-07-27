@@ -17,11 +17,12 @@ Forum::Application.routes.draw do
     resources :categories, :except => [:new]
     resource :posts, :except => [:new]
     match "users/:id" => "users#destroy", :as => :destroy_user, :via => :delete
-    match "users/:flag/:id" => "users#show", :as => :show_user, :via => :get
+    match "users/:id" => "users#show", :as => :show_user, :via => :get
     match "users/" => "users#index", :via => :get, :as => :show_users
     match "posts/:id/:post_or_thread/:reply_or_quote/new" => "posts#new", :as => :new_post, :via => :get
     match "categories/:id/new" => "categories#new", :as => :new_category, :via => :get
     match "freds/:id/new" => "freds#new", :as => :new_fred, :via => :get
+    match "users/:flag/:id" => "users#show", :as => :show_user_bla, :via => :get
   end
 
 

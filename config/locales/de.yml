@@ -4,6 +4,11 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  signupdate: "Anmeldedatum"
+  signindate: "Letzter Besuch"
+  signups: "Anmeldungen"
+  posts: "Pfostierungen"
+  threads: "Fäden"
   sure_delete_thread: "Bist du sicher? Dies wird den gesamten Thread löschen!"
   content: "Inhalt"
   thread: "Faden"
@@ -17,7 +22,7 @@ de:
   deleted_thread_success: "Thread wurde erfolgreich gelöscht"
   deleted_post_success: "Posts wurden erfolgreich gelöscht"
   email: "Email"
-  nick: "Nick"
+  nick: "Name"
   role: "Rolle"
   all_users: "Alle User"
   contains: "enthält"

@@ -5,23 +5,23 @@
 <table id="user" >
     <tbody>
         <tr>
-            <td>Nick: </td>
+            <td><%= t(:nick) %>: </td>
             <td><%=@user.nick%></td>
         </tr>
         <tr>
-            <td>Email: </td>
+            <td><%= t(:email) %>: </td>
             <td><%=@user.email%></td>
         </tr>
         <tr>
-            <td>Role: </td>
+            <td><%= t(:role) %>: </td>
             <td><%=@user.roles[0]%></td>
         </tr>
         <tr>
-            <td>Sign up: </td>
+            <td><%= t(:signupdate) %>: </td>
             <td><%=@user.created_at.strftime("%B %d, %Y")%></td>
         </tr>
         <tr>
-            <td>Last Sign in: </td>
+            <td><%= t(:signindate) %>: </td>
             <% if @user.last_sign_in_at != nil%>
             <td><%=@user.last_sign_in_at.strftime("%B %d, %Y")%></td>
             <% else %>
@@ -30,15 +30,15 @@
             <% end%>
         </tr>
         <tr>
-            <td>Sign ups: </td>
+            <td><%= t(:signups) %>: </td>
             <td><%=@user.sign_in_count%></td>
         </tr>
         <tr>
-            <td>Posts: </td>
+            <td><%= t(:posts) %>: </td>
             <td><%=Post.find_all_by_user_id(@user).count%></td>
         </tr>
         <tr>
-            <td>Threads: </td>
+            <td><%= t(:threads) %>: </td>
             <td><%=Fred.find_all_by_user_id(@user).count%></td>
         </tr>
 
@@ -67,16 +67,13 @@
     <th></th>
   </tr>
 
-  <% if params[:flag]=="limited" %>
-
+  <% if params[:flag]!="unlimited" %>
     <% result = Post.limit(1).order("created_at DESC").find_all_by_user_id(@user.id) %>
   <% else %>
     <% result = Post.order("created_at DESC").find_all_by_user_id(@user.id) %>
   <% end %>
-
   <% result.each do |post| %>
   <tr>
-
     <td><%= post.content %></td>
     <% fred_post = Fred.find post.fred_id %>
     <td><%= fred_post.headline %></td>
@@ -85,16 +82,12 @@
   </tr>
 <% end %>
 </table>
-  <% if params[:flag] == "limited" %>
-    <%= link_to t(:moar), show_user_path("unlimited",@user) %>
+  <% if params[:flag] == "unlimited" %>
+    <%= link_to t(:less), show_user_path(@user) %>
   <% else %>
-    <%= link_to t(:less), show_user_path("limited",@user) %>
+    <%= link_to t(:moar), show_user_bla_path("unlimited",@user) %>
   <% end %>
 </div>
-
-
-
-
 
 <%= link_to t(:back), show_users_path %>
 
