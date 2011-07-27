@@ -7,5 +7,21 @@ class Category < ActiveRecord::Base
   def to_s
     self.name
   end
-  
+
+  def delete_context
+    cate = Category.where(:category_id => self.id)
+    unless cate.nil?
+      cate.each do |c|
+        c.delete_context
+      end
+    end
+    fred = Fred.where(:category_id => self.id)
+    unless fred.nil?
+      fred.each do |f|
+        f.delete_fred_context
+      end
+    end
+    self.destroy
+  end
+
 end

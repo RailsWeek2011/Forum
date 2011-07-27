@@ -87,7 +87,8 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1.json
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
+    @category.delete_context  #there you go, this little fatty kills em all!
+                              #fred and post have equal methods
 
     respond_to do |format|
       format.html { redirect_to categories_url }

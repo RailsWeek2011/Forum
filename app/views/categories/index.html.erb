@@ -3,12 +3,13 @@
     <%=  link_to t(:new_category), new_category_path(0), :class => 'btn' %>
   <% end %>
 </div>
-
-<%= render :partial => 'categories' %>
-
-<div class="latest_posts">
-<%= render :partial => 'latest' %>  
-</div>
-
+<% unless Category.first.nil? #this should check if Category has categories in it, if not, the code is obsolete%>
+    <%= render :partial => 'categories' %>
+    <div class="latest_posts">
+        <%= render :partial => 'latest' %>
+    </div>
+<% else %>
+    <% flash.now[:notice] = t(:nothing_to_see) #else does your flash message%>
+<% end %>
 
 <br />

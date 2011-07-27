@@ -8,4 +8,14 @@ class Fred < ActiveRecord::Base
   def to_s
     self.headline
   end
+
+  def delete_fred_context
+    posts = Post.where(:fred_id => self.id)
+    unless posts.nil?
+      posts.each do |p|
+        p.delete_post_context
+      end
+    end
+    self.destroy
+  end
 end
