@@ -282,4 +282,9 @@ en:
 
       full_messages:
         format: "%{attribute} %{message}"
+        
+    attributes:
+      user:
+        login: "Nickname or Email"
+        
 

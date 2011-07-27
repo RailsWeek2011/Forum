@@ -17,10 +17,14 @@ class User < ActiveRecord::Base
             :too_long => t(:nick_too_long)
           }
   
-  
+  # Virtual attribute for authenticating by either nickname or email
+  # This is in addition to a real persisted field like 'nick'
+  attr_accessor :login
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :nick, :signature, :remember_me, :alive, :roles_mask
+  attr_accessible :email, :password, :password_confirmation, :nick, :signature, :remember_me, :alive, :roles_mask, :login
+  
+  
 
   ROLES = %w[admin moderator user]
 
@@ -66,6 +70,14 @@ class User < ActiveRecord::Base
   
   def to_s
     self.nick
+  end
+  
+  protected
+
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    login = conditions.delete(:login)
+    where(conditions).where(["lower(nick) = :value OR lower(email) = :value", { :value => login.downcase }]).first
   end
 
 end
