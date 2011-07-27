@@ -49,5 +49,9 @@ class User < ActiveRecord::Base
   def deleted?
     !self.alive
   end
+  
+  def to_s
+    self.nick
+  end
 
 end

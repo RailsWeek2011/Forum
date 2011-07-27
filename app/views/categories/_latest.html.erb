@@ -1,0 +1,5 @@
+<% Post.latest.each do |post|  %>
+  <%= link_to(post.user.to_s + " in " + post.fred.to_s + "(" + time_ago_in_words(post[:created_at]) + ")",
+              fred_path(post[:fred_id])+ "#" + post[:id].to_s) %>
+  <%= raw "<br />"  %>
+<% end  %>

@@ -6,7 +6,11 @@
   <div class="actual_post">
     <div class="posting_head">
       <%= "#{reply[:created_at].strftime("%H:%M %B %d  %Y")} (#{time_ago_in_words(reply[:created_at])}) " %>
+      <% if reply[:post_id].nil? %>
       <%= link_to("@" + reply.fred.user[:nick], fred_path(reply[:fred_id])+ "#top") %>
+      <% else %>
+      <%= link_to("@" + reply.fred.user[:nick], fred_path(reply[:fred_id])+ "#" + reply[:post_id].to_s) %>
+      <% end %>
     </div>
     <div class="post_body">
       <%= raw (red_cloth reply.content) %>
