@@ -4,25 +4,6 @@ class PostsController < ApplicationController
   load_and_authorize_resource
   check_authorization
 
-  def index
-    @posts = Post.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
-    end
-  end
-
-  # GET /posts/1
-  # GET /posts/1.json
-  def show
-    @post = Post.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @post }
-    end
-  end
 
   # GET /posts/new
   # GET /posts/new.json

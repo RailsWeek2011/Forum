@@ -12,10 +12,10 @@ Forum::Application.routes.draw do
   scope "(:locale)", :locale => /en|de/ do
     devise_for :users
     resources :users
-    resources :posts
-    resources :freds , :except => [:new]
-    resources :categories, :except => [:new]
-    resource :posts, :except => [:new]
+    resources :posts, :except => [:index, :show]
+    resources :freds , :except => [:new, :index]
+    resources :categories, :except => :new
+    resource :posts, :except => :new
     match "users/:id" => "users#destroy", :as => :destroy_user, :via => :delete
     match "users/:id" => "users#show", :as => :show_user, :via => :get
     match "users/" => "users#index", :via => :get, :as => :show_users

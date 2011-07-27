@@ -5,15 +5,6 @@ class FredsController < ApplicationController
   load_and_authorize_resource
   check_authorization
 
-  def index
-    @freds = Fred.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @freds }
-    end
-  end
-
   # GET /freds/1
   # GET /freds/1.json
   def show
