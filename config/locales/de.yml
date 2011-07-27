@@ -4,6 +4,10 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  content: "Inhalt"
+  thread: "Faden"
+  less: "weniger"
+  moar: "MEEEEEEEEEEEEEEHR!"
   leave_blank: " (freilassen, wenn du es nicht ändern willst)"
   effect_gravatar: " (ACHTUNG: Ändern der Email-Adresse wird auch eine Änderung des Avatars zur Folge haben)"
   updated_user_success: "User wurde aktualisiert"
