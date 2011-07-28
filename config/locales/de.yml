@@ -4,6 +4,8 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  latest_posts: "Die letzten Posts"
+  latest_threads: "Die letzten Threads"
   nick_too_short: "Nickname muss mindestens %{count} lang sein"
   nick_too_long: "Nickname darf höchstens %{count} lang sein"
   signupdate: "Anmeldedatum"

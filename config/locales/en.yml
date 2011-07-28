@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  latest_posts: "Latest Posts"
+  latest_threads: "Latest Threads"
   nick_too_short: "Nickname must have at least %{count} characters"
   nick_too_long: "Nickname must have at most %{count} characters"
   signupdate: "Signup date"

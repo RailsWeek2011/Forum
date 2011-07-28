@@ -1,5 +1,6 @@
 module PostsHelper
   def get_quote
+    
       if params[:reply_or_quote] == "reply"
         return ""
       end
@@ -8,6 +9,10 @@ module PostsHelper
         content = Fred.find(params[:id]).content
       else
         content = Post.find(params[:id]).content
+        # check if user just wants to edit his post
+        if params[:post_or_thread].nil?
+          return content
+        end
       end
       
       pattern = /^bq\.\./

@@ -5,9 +5,7 @@
 </div>
 <% unless Category.first.nil? #this should check if Category has categories in it, if not, the code is obsolete%>
     <%= render :partial => 'categories' %>
-    <div class="latest_posts">
-        <%= render :partial => 'latest' %>
-    </div>
+    <%= render :partial => 'latest' %>
 <% else %>
     <% flash.now[:notice] = t(:nothing_to_see) #else does your flash message%>
 <% end %>

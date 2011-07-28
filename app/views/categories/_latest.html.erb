@@ -1,5 +1,16 @@
+<div class = "latest_posts">
+  <h2><%= t(:latest_posts) %></h2>
 <% Post.latest.each do |post|  %>
   <%= link_to(post.user.to_s + " in " + post.fred.to_s + "(" + time_ago_in_words(post[:created_at]) + ")",
               fred_path(post[:fred_id])+ "#" + post[:id].to_s) %>
   <%= raw "<br />"  %>
 <% end  %>
+</div>
+<div class = "latest_threads">
+  <h2><%= t(:latest_threads) %></h2>
+<% Fred.latest.each do |fred|  %>
+  <%= link_to(fred.to_s  + "(" + time_ago_in_words(fred[:created_at]) + ")",
+              fred_path(fred[:id])+ "#top") %>
+  <%= raw "<br />"  %>
+<% end %>
+</div>
