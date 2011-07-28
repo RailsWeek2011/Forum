@@ -66,7 +66,7 @@ class UsersController < ApplicationController
     @user.update_attributes(update)
 
     respond_to do |format|
-      format.html {redirect_to show_users_path}
+      format.html {redirect_to categories_path, :method => :get}
       format.json { head :ok }
     end
   end

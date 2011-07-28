@@ -27,7 +27,7 @@ de:
       unauthenticated: 'Einloggen oder anmelden um fortzufahren!'
       unconfirmed: 'Account bestaetigen um fort zu fahren.'
       locked: 'Ihr Account ist gesperrt.'
-      invalid: 'Ungueltiges email or Passwort'
+      invalid: 'Login fehlgeschlagen. Bitte versuche es noch einmal'
       invalid_token: 'Invalid authentication token.'
       timeout: 'Sitzung abgelaufen, neu einloggen.'
       inactive: 'Account noch nich aktiviert.'
