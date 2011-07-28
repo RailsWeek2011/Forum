@@ -46,7 +46,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-    @form_headline = t(:edit_category)
+    @headline = t(:edit_category)
     @category = Category.find(params[:id])
   end
 
@@ -69,12 +69,12 @@ class CategoriesController < ApplicationController
   # PUT /categories/1
   # PUT /categories/1.json
   def update
-    @form_headline = "Update Category"
+    @headline = t(:update_category)
     @category = Category.find(params[:id])
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+        format.html { redirect_to @category, notice: t(:updated_category_success) }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

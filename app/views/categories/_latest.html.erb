@@ -1,7 +1,12 @@
 <div class = "latest_posts">
   <h2><%= t(:latest_posts) %></h2>
 <% Post.latest.each do |post|  %>
-  <%= link_to(post.user.to_s + " in " + post.fred.to_s + "(" + time_ago_in_words(post[:created_at]) + ")",
+  <% if post.user.alive?  %>
+  <% nick = post.user[:nick] %>
+  <% else %>
+  <% nick = t(:deleted_user)  %>
+  <% end %>
+  <%= link_to(nick + " in " + post.fred.to_s + "(" + time_ago_in_words(post[:created_at]) + ")",
               fred_path(post[:fred_id])+ "#" + post[:id].to_s) %>
   <%= raw "<br />"  %>
 <% end  %>
