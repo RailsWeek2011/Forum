@@ -5,6 +5,8 @@ class Fred < ActiveRecord::Base
   validates :headline, :presence => true, :length => {:minimum => 3, :maximum => 40}
   validates :content, :presence => true, :length => {:minimum => 1}
   
+  scope :latest, order("created_at DESC").limit(10)
+  
   def to_s
     self.headline
   end

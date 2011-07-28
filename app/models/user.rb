@@ -68,6 +68,14 @@ class User < ActiveRecord::Base
     !self.alive
   end
   
+  def get_nick
+    if self.alive
+      self.nick
+    else
+      t(:deleted_user)
+    end
+  end
+  
   def to_s
     self.nick
   end

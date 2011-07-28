@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  latest_posts: "Latest Posts"
+  latest_threads: "Latest Threads"
   nick_too_short: "Nickname must have at least %{count} characters"
   nick_too_long: "Nickname must have at most %{count} characters"
   signupdate: "Signup date"
@@ -16,6 +18,7 @@ en:
   moar: "more"
   leave_blank: " (leave blank if you don't want to change it)"
   effect_gravatar: " (BEWARE: Changing your email-adress will also change your Avatar)"
+  updated_category: "Update Category"
   updated_user_success: "User was successfully updated."
   created_post_success: "Post was successfully created."
   updated_post_success: "Post was successfully updated."
@@ -28,6 +31,7 @@ en:
   nick: "Nick"
   role: "Role"
   all_users: "All users"
+  deleted_user: "Deleted User"
   contains: "contains"
   nothing_to_see: "Nothing to see here"
   sure: "Are you sure?"

@@ -62,10 +62,18 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    update = {:nick => 'Deleted User', :email => 'deleted_user@example.com', :alive => false}
+    # if user is not an admin, he can only delete himself
+    unless @user == current_user
+      unless current_user.role? :admin
+       redirect_to root_path
+      end
+    end
+    
+    update = {:alive => false}
     @user.update_attributes(update)
     
-    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+    #if the user deleted himself log him out
+    (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)) if current_user == @user
 
     respond_to do |format|
       format.html {redirect_to  root_path}

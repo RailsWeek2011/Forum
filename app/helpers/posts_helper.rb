@@ -1,5 +1,6 @@
 module PostsHelper
   def get_quote
+    
       if params[:reply_or_quote] == "reply"
         return ""
       end
@@ -8,6 +9,10 @@ module PostsHelper
         content = Fred.find(params[:id]).content
       else
         content = Post.find(params[:id]).content
+        # check if user just wants to edit his post
+        if params[:post_or_thread].nil?
+          return content
+        end
       end
       
       pattern = /^bq\.\./
@@ -42,15 +47,34 @@ module PostsHelper
   
   def link_to_user user
     if can? :show, @users
-      if current_user && user.alive
+      if current_user
         if current_user == user
           return link_to user.nick, edit_user_registration_path, :class => "post_author"
-        end
+        elsif user.deleted?
+          return t(:deleted_user)
+        else
           return link_to user.nick, show_user_path(user), :class => "post_author"
+        end
       end
       
     end
+    if user.deleted?
+      return t(:deleted_user)
+    else
       return user.nick
+    end
+  end
+  
+  def create_link_to_upper_post post
+    nick = post.user[:nick]
+    if post.user.deleted?
+      nick = t(:deleted_user)
+    end
+    if post[:post_id].nil?
+      return link_to("@" + nick, fred_path(post[:fred_id])+ "#top")
+    else
+      return link_to("@" + nick, fred_path(post[:fred_id])+ "#" + post[:post_id].to_s)
+    end
   end
   
 end

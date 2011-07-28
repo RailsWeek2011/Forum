@@ -24,6 +24,6 @@
 
 <h3><%= t(:cancel_account) %></h3>
 
-<%= link_to t(:cancel_account), destroy_user_path(current_user[:id]), :method => :delete %>
+<%= link_to t(:cancel_account), destroy_user_path(current_user[:id]), :confirm => t(:sure), :method => :delete %>
 
 <%= link_to t(:back), :back %>
