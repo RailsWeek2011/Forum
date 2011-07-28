@@ -49,13 +49,12 @@
 
 <div id ="can">
   <% if can? :manage, @users %>
-    <% #mein Vorschlag für destroy %>
     <%= link_to t(:destroy), destroy_user_path(@user), :method => :delete %>
     <%= link_to t(:edit), edit_user_path(@user) %>
 <% end %>
 </div>
 
-<% unless Post.where(:id => @user.id).empty?  %>
+<% unless Post.where(:user_id => @user.id).empty?  %>
 <div id = "posts">
   <table>
   <tr>
@@ -64,7 +63,7 @@
   </tr>
 
   <% if params[:flag]!="unlimited" %>
-    <% result = Post.limit(1).order("created_at DESC").find_all_by_user_id(@user.id) %>
+    <% result = Post.limit(5).order("created_at DESC").find_all_by_user_id(@user.id) %>
   <% else %>
     <% result = Post.order("created_at DESC").find_all_by_user_id(@user.id) %>
   <% end %>
