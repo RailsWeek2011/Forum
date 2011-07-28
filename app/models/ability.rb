@@ -20,7 +20,7 @@ class Ability
       can :manage, Fred
       can :manage, Post
       can :read, :all
-      can :delete, User
+      can :destroy, User
       can :update, User
     end
 
@@ -30,7 +30,7 @@ class Ability
       can :update, Post
       can :create, Fred
       can :update, Fred
-      can :delete, User
+      can :destroy, User
       can :update, User
     end
 

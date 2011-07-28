@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   # GET /users.json
   load_and_authorize_resource
   check_authorization
-  rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, :alert => exception.message
-  end
+ #rescue_from CanCan::AccessDenied do |exception|
+  #  redirect_to root_url, :alert => exception.message
+  #end
 
 
   def index
@@ -64,9 +64,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     update = {:nick => 'Deleted User', :email => 'deleted_user@example.com', :alive => false}
     @user.update_attributes(update)
+    
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
 
     respond_to do |format|
-      format.html {redirect_to categories_path, :method => :get}
+      format.html {redirect_to  root_path}
       format.json { head :ok }
     end
   end
