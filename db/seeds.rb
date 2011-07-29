@@ -71,7 +71,7 @@ post = Post.create :user_id => 5, :fred_id => fredin10.id, :content => "Thats a 
 n = 2
 x = 0
 
-while y < n
+while x < n
   posts = Post.all
   posts.each do |p|
     Post.create :user_id => p.user_id, :fred_id => p.fred_id, :content => "Thats a Reply!", :post_id => p.id
