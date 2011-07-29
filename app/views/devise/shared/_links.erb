@@ -6,10 +6,6 @@
   <%= link_to t(:signup), new_registration_path(resource_name) %><br />
 <% end -%>
 
-<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-  <%= link_to t(:forgot_pw), new_password_path(resource_name) %><br />
-<% end -%>
-
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
   <%= link_to t(:failed_receive), new_confirmation_path(resource_name) %><br />
 <% end -%>
@@ -23,3 +19,5 @@
     <%= link_to "#{t(:sign_in_with)} #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
 <% end -%>
+
+<%= link_to t(:back), categories_path %>

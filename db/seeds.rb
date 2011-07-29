@@ -66,17 +66,17 @@ post = Post.create :user_id => 5, :fred_id => fredin10.id, :content => "Thats a 
 #TODO ADD SOME REPLIES
 
 #nicht sehr intelligent, aber ich war zu faul mir hier was auszudenken, also:
-#die tiefe der verschachtelung bestimmt die variable x, aber vorsicht!
+#die tiefe der verschachtelung bestimmt die variable x, aber vorsicht! x = x * 2^n
 
-x = 4
-y = 0
+n = 2
+x = 0
 
-while y < x
+while y < n
   posts = Post.all
   posts.each do |p|
-    Post.create :user_id => p.user_id, :fred_id => p.fred_id, :content => "Thats a Post!", :post_id => p.id
+    Post.create :user_id => p.user_id, :fred_id => p.fred_id, :content => "Thats a Reply!", :post_id => p.id
   end
-  y = y+1
+  x = x+1
 end
 
 

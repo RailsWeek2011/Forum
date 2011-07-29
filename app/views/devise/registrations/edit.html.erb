@@ -10,20 +10,18 @@
   <%= f.text_field :nick %></p>
 
 
-  <p><%= f.label :password %> <i><%= t(:leave_blank) %></i><br />
+  <p><%= f.label :password, t(:password)%> <i><%= t(:leave_blank) %></i><br />
   <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %><br />
+  <p><%= f.label :password_confirmation, t(:password_confirmation)%><br />
   <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.label :current_password %> <%= t(:confirmpw) %><br />
+  <p><%= f.label :current_password, t(:current_password) %><%= t(:confirmpw) %><br />
   <%= f.password_field :current_password %></p>
 
-  <p><%= f.submit "Update" %></p>
+  <p><%= f.submit t(:update) %></p>
 <% end %>
 
-<h3><%= t(:cancel_account) %></h3>
+<%= link_to t(:cancel_account), destroy_user_path(current_user[:id]), :confirm => t(:sure), :method => :delete %><br/>
 
-<%= link_to t(:cancel_account), destroy_user_path(current_user[:id]), :confirm => t(:sure), :method => :delete %>
-
-<%= link_to t(:back), :back %>
+<%= link_to t(:back), categories_path %>

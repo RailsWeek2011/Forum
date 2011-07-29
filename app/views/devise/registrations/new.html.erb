@@ -9,10 +9,10 @@
   <p><%= f.label :nick %><br />
   <%= f.text_field :nick %></p>
 
-  <p><%= f.label :password %><br />
+  <p><%= f.label :password, t(:password) %><br />
   <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %><br />
+  <p><%= f.label :password_confirmation, t(:password_confirmation) %><%= t(:confirmpw) %><br />
   <%= f.password_field :password_confirmation %></p>
 
 
@@ -20,5 +20,6 @@
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+
 
 

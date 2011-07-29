@@ -36,7 +36,7 @@ module PostsHelper
   end
   
   def show_edit post
-    if current_user == post.user &&  ((Time.now - post[:created_at]) < 1200 )
+    if (current_user == post.user &&  ((Time.now - post[:created_at]) < 1200 ) ) || (current_user.roles_mask == 1)
       if post.class == Post
         link_to t(:edit), edit_post_path(post)
       else

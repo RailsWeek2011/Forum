@@ -4,6 +4,10 @@
 # - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
 
 de:
+  update: "Aktualisieren"
+  current_password: "Aktuelles Passwort"
+  password_confirmation: "Passwort Bestätigung"
+  remember_me: "Eingeloggt bleiben"
   latest_posts: "Die letzten Posts"
   latest_threads: "Die letzten Threads"
   nick_too_short: "Nickname muss mindestens %{count} lang sein"

@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
 
   before_save :set_role, :set_alive
   
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :rememberable, :trackable, :validatable#, :recoverable
          
   has_many :freds
   has_many :posts
@@ -22,7 +21,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :nick, :signature, :remember_me, :alive, :roles_mask, :login
+  attr_accessible :email, :password, :password_confirmation, :nick, :remember_me, :alive, :roles_mask, :login
   
   
 

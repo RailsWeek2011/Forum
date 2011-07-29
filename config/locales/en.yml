@@ -2,6 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  update: "Update"
+  current_password: "Current password"
+  password_confirmation: "Password confrimation"
+  remember_me: "Remember me"
   latest_posts: "Latest Posts"
   latest_threads: "Latest Threads"
   nick_too_short: "Nickname must have at least %{count} characters"
@@ -46,7 +50,7 @@ en:
   showusers: "Users"
   signin: "Sign in"
   confirmpw: "(wir brauchen dein altes Passwort zur bestaetigung)"
-  password: "Passwort"
+  password: "Password"
   logout: "Logout"
   editprofile: "Edit my Profile"
   login: "Sign in"
