@@ -26,4 +26,6 @@ Forum::Application.configure do
   config.assets.compress = false
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.active_record.mass_assignment_sanitizer = :strict
 end
